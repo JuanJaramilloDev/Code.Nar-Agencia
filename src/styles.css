@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ================================
+     NariCode — Colors
+     ================================ */
+
+  --color-black: #080808;
+  --color-black-soft: #0d0d0d;
+  --color-surface: #111111;
+  --color-surface-light: #171717;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #e5c76b;
+  --color-gold-soft: rgba(212, 175, 55, 0.12);
+
+  --color-white: #f5f5f5;
+  --color-white-soft: #d4d4d4;
+  --color-gray: #a1a1aa;
+  --color-gray-dark: #52525b;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* ================================
+     Typography
+     ================================ */
+
+  --font-display: 'Inter', Arial, sans-serif;
+  --font-body: 'Inter', Arial, sans-serif;
+
+  /* ================================
+     Layout
+     ================================ */
+
+  --container: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* ================================
+     Effects
+     ================================ */
+
+  --shadow-gold:
+    0 0 40px rgba(212, 175, 55, 0.15);
+
+  --transition:
+    250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ================================
+   RESET
+   ================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  background: var(--color-black);
+  color: var(--color-white);
+
+  font-family: var(--font-body);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+button,
+a {
+  font: inherit;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+button {
+  border: 0;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-black);
+}
