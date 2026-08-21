@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="Code.Nar">
+  <title>Code.Nar</title>
+
+  <defs>
+    <linearGradient id="cnGoldFull" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5c76b"/>
+      <stop offset="55%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b08d23"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Isotipo -->
+  <rect width="64" height="64" rx="15" fill="url(#cnGoldFull)"/>
+
+  <g fill="none" stroke="#080808" stroke-width="4.6"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 21 L13.5 32 L23 43"/>
+    <path d="M31.5 43 V22 L45.5 42 V21"/>
+  </g>
+
+  <circle cx="50.5" cy="45.5" r="3.1" fill="#080808"/>
+
+  <!-- Logotipo -->
+  <text x="80" y="42"
+        font-family="Inter, 'Segoe UI', Arial, sans-serif"
+        font-size="27" font-weight="700" letter-spacing="-0.8"
+        fill="#f5f5f5">Code.<tspan fill="#d4af37">Nar</tspan></text>
+</svg>
