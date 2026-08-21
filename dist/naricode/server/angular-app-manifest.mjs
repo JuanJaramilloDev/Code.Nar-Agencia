@@ -8,42 +8,42 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-jAzrg_92.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-BxFGeu6V.js",
+      "chunk-C7ztORop.js"
     ],
     "route": "/"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-CrMSMc3T.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-DbHgmLj2.js",
+      "chunk-C7ztORop.js"
     ],
     "route": "/servicios"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-C_Qi_f6_.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-DU_NGpIF.js",
+      "chunk-C7ztORop.js"
     ],
     "route": "/proyectos"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-BwmsQkNQ.js",
-      "chunk-Boe8W-8V.js",
-      "chunk-gXWSgGua.js"
+      "chunk-DUUD9Lyt.js",
+      "chunk-gXWSgGua.js",
+      "chunk-C7ztORop.js"
     ],
     "route": "/nosotros"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-dThVd8DC.js",
-      "chunk-Boe8W-8V.js",
-      "chunk-gXWSgGua.js"
+      "chunk-gbmBeqdR.js",
+      "chunk-gXWSgGua.js",
+      "chunk-C7ztORop.js"
     ],
     "route": "/contacto"
   },
@@ -55,13 +55,13 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 9733, hash: 'fb5cf8b9b2f3de8230d9acba68e46702acce576958f958ea9544d9b8ed0306da', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 946, hash: '454610ffe5f9a3d6fbd71768d9c4f89921598731cacbacc505361ccc03d820cb', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 61573, hash: '6b6e5ae6681e9a684affb9b828b71aadbb33d74be342c62fad3f10f33031c892', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'proyectos/index.html': {size: 42496, hash: '82475934b4ddfa41c69485a80ad6022b4dbaecdb18eb3b407ef55753e81a56c1', text: () => import('./assets-chunks/proyectos_index_html.mjs').then(m => m.default)},
-    'servicios/index.html': {size: 59398, hash: 'fef0726ce7e2f704a64b8a6037e9bb3c36bb099e19b19ca54cd288eb3f3cfd79', text: () => import('./assets-chunks/servicios_index_html.mjs').then(m => m.default)},
-    'nosotros/index.html': {size: 54820, hash: '0b15c94278bbad48c6e3f9505d262fc65bdc17e2062babd7aa9b78efcd4a8166', text: () => import('./assets-chunks/nosotros_index_html.mjs').then(m => m.default)},
-    'contacto/index.html': {size: 56761, hash: '1092630f9d06250bca88f52d41d4b52b88049883694c27cd46b2691b7038d432', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
-    'styles-KQCL5Y2V.css': {size: 9369, hash: 'Y/UbTP4DwpM', text: () => import('./assets-chunks/styles-KQCL5Y2V_css.mjs').then(m => m.default)}
+    'index.csr.html': {size: 10212, hash: '38c6312dcc3ebc7d540a08a10baef8fa4f43bee3e494a86f4a04026c8889034e', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 946, hash: '711de66d6d7d451068649acf7067dae19dbadfafb5928fa696f4c527185c7f3d', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'proyectos/index.html': {size: 45518, hash: 'b53f792b1b0dc3526f26cbf33281ac7e8394efb499b846ca1dd0ee641ef50747', text: () => import('./assets-chunks/proyectos_index_html.mjs').then(m => m.default)},
+    'servicios/index.html': {size: 62729, hash: '1fdefc0050fb6178ab42df4c4517e39c0a18e6d81647d40f557927faa0ab4af6', text: () => import('./assets-chunks/servicios_index_html.mjs').then(m => m.default)},
+    'nosotros/index.html': {size: 58458, hash: 'ca0149e34de1999baaded0f7fde6436739c9dbb9d75ec614d6d13f7d0fb5fcac', text: () => import('./assets-chunks/nosotros_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 64970, hash: 'c0626c1354c73d8641d26c998400b9d407dcc4a5bfe6df2b10c650a23b68db5c', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'contacto/index.html': {size: 61231, hash: 'baca1894a0145fb7d7722dab2e4dc3968d609a09d355cdce4d987d347007fce7', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
+    'styles-LJI27JWI.css': {size: 10198, hash: 'rZiPIk0GTtE', text: () => import('./assets-chunks/styles-LJI27JWI_css.mjs').then(m => m.default)}
   },
 };
