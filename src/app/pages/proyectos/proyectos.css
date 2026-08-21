@@ -427,3 +427,43 @@
     }
 
 }
+
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+@media (hover: none) {
+
+    .project-card:hover,
+    .project-link:hover,
+    .projects-cta .cta-button:hover {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .projects-header > p {
+        font-size: 14px;
+    }
+
+    /* El hero arrancaba casi pegado a la barra fija. */
+    .projects-hero {
+        padding-top: 130px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .projects-hero h1 {
+        font-size: clamp(34px, 11vw, 46px);
+        letter-spacing: -1px;
+    }
+
+    .projects-header h2 {
+        font-size: 32px;
+    }
+}

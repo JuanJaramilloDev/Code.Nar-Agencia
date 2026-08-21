@@ -60,6 +60,13 @@
 
 html {
   scroll-behavior: smooth;
+
+  /* Los anclajes no deben quedar tapados por la barra fija. */
+  scroll-padding-top: 96px;
+
+  /* iOS agranda el texto al girar a horizontal si no se fija. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 
@@ -73,7 +80,25 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /*
+   * Los halos decorativos son más anchos que la pantalla: sin esto
+   * aparece scroll lateral en móvil.
+   */
+  overflow-x: hidden;
+
+  /* Evita el rebote encadenado con el menú abierto. */
+  overscroll-behavior-y: none;
 }
+
+/* 'hidden' arriba es el respaldo; 'clip' no rompe position: sticky. */
+@supports (overflow: clip) {
+
+  body {
+    overflow-x: clip;
+  }
+}
+
 
 
 button,
@@ -102,4 +127,96 @@ img {
 ::selection {
   background: var(--color-gold);
   color: var(--color-black);
+}
+
+
+/* ================================
+   TÁCTIL Y MÓVIL
+   ================================ */
+
+/*
+ * Android pinta un recuadro azul al tocar. Lo quitamos y damos
+ * una respuesta propia al pulsar.
+ */
+a,
+button,
+summary,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) {
+
+  a:active,
+  button:active,
+  summary:active {
+    opacity: 0.7;
+  }
+}
+
+
+/* Nada debe medir menos de 44px de alto útil al tocarse. */
+@media (max-width: 700px) {
+
+  button,
+  [type='button'],
+  [type='submit'] {
+    min-height: 44px;
+  }
+}
+
+
+/*
+ * Los campos por debajo de 16px hacen que iOS acerque la pantalla
+ * al enfocarlos, y el usuario queda con la página descuadrada.
+ */
+@media (max-width: 900px) {
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+
+/* Respeto del área segura en pantallas con muesca. */
+@supports (padding: max(0px)) {
+
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+
+/* Palabras largas no deben desbordar en pantallas estrechas. */
+@media (max-width: 700px) {
+
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+
+/* ================================
+   ACCESIBILIDAD
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

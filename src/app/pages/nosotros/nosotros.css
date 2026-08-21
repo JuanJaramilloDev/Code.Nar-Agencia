@@ -843,3 +843,83 @@
     transform: none;
   }
 }
+
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+@media (hover: none) {
+
+  .btn:hover,
+  .principio:hover,
+  .miembro:hover,
+  .stack-item:hover,
+  .metrica:hover {
+    transform: none;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  /* La tarjeta de la cita deja de imponer alto fijo. */
+  .origen-card {
+    min-height: auto;
+    padding: 26px 24px;
+  }
+
+  .origen-card-body {
+    padding: 32px 0;
+  }
+
+  /* Los textos de sistema suben del mínimo legible. */
+  .origen-card-top,
+  .origen-card-bottom {
+    font-size: 10.5px;
+    letter-spacing: 1px;
+  }
+
+  .declaracion-texto {
+    letter-spacing: -0.8px;
+  }
+
+  .miembro {
+    padding: 28px 24px;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .hero-nosotros h1 {
+    font-size: clamp(32px, 10.5vw, 44px);
+    letter-spacing: -1px;
+  }
+
+  .metrica strong {
+    font-size: 30px;
+  }
+
+  .principio {
+    padding: 28px 22px;
+  }
+
+  /* El número del principio no debe pisar el título. */
+  .principio-numero {
+    position: static;
+    margin-bottom: 12px;
+  }
+
+  .principio-icono {
+    margin-bottom: 20px;
+  }
+
+  .declaracion-comilla {
+    font-size: 60px;
+  }
+
+  .origen-card-body h3 {
+    font-size: 26px;
+  }
+}

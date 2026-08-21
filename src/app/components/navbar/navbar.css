@@ -330,3 +330,63 @@
     animation: none;
   }
 }
+
+
+/* ================================
+   ÁREA SEGURA (MUESCA)
+   ================================ */
+
+@supports (padding: max(0px)) {
+
+  .navbar-container {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  .menu-movil {
+    padding-right: max(32px, env(safe-area-inset-right));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+  }
+}
+
+
+@media (hover: none) {
+
+  .menu-movil nav a:hover {
+    padding-left: 0;
+  }
+
+  .menu-movil nav a:hover span {
+    transform: none;
+  }
+}
+
+
+/* El menú se adapta a pantallas muy estrechas y a poca altura. */
+@media (max-width: 400px) {
+
+  .menu-movil {
+    width: min(300px, 88vw);
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+
+  .menu-movil nav a {
+    padding: 17px 0;
+    font-size: 17px;
+  }
+}
+
+@media (max-height: 560px) {
+
+  .menu-movil {
+    justify-content: flex-start;
+    padding-top: 88px;
+    overflow-y: auto;
+  }
+
+  .menu-movil nav a {
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}

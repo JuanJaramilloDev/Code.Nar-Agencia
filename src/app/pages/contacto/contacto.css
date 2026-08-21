@@ -902,3 +902,119 @@ a.canal:hover .canal-body strong {
     animation-duration: 2s;
   }
 }
+
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+@media (hover: none) {
+
+  .btn:hover,
+  .paso:hover,
+  a.canal:hover .canal-icon,
+  a.canal:hover .canal-arrow {
+    transform: none;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  /*
+   * 16px es el mínimo para que iOS no acerque la pantalla al enfocar
+   * un campo. El resto de medidas se ajusta a ese tamaño.
+   */
+  .campo input,
+  .campo select,
+  .campo textarea {
+    padding: 15px 16px;
+    font-size: 16px;
+  }
+
+  .campo label {
+    font-size: 13px;
+  }
+
+  /* Objetivo táctil cómodo para la casilla de la política. */
+  .campo-check label {
+    gap: 14px;
+    padding: 6px 0;
+    font-size: 13.5px;
+  }
+
+  .campo-check input {
+    width: 22px;
+    height: 22px;
+  }
+
+  .form-submit {
+    min-height: 54px;
+  }
+
+  /* El panel lateral deja de competir por el ancho. */
+  .canales {
+    padding: 28px 22px;
+  }
+
+  .canal {
+    padding: 18px 0;
+  }
+
+  .canal-body small {
+    font-size: 13px;
+    white-space: normal;
+  }
+
+  .faq-item summary {
+    gap: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+/* Móviles estrechos. */
+@media (max-width: 400px) {
+
+  .hero-contacto h1 {
+    font-size: clamp(32px, 10.5vw, 44px);
+    letter-spacing: -1px;
+  }
+
+  .hero-contacto-badges {
+    gap: 8px;
+  }
+
+  .hero-contacto-badges span {
+    padding: 8px 13px;
+    font-size: 11.5px;
+  }
+
+  .form-panel {
+    padding: 26px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .form-heading h2 {
+    font-size: 23px;
+  }
+
+  .canales {
+    padding: 26px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .paso {
+    padding: 28px 22px;
+  }
+
+  .faq-item summary {
+    padding: 18px 18px;
+    font-size: 14px;
+  }
+
+  .faq-item p {
+    padding: 0 18px 20px;
+    font-size: 13.5px;
+  }
+}

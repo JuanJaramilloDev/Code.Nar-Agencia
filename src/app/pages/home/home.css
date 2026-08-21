@@ -3,6 +3,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   background: radial-gradient(circle at 75% 45%, rgba(212,175,55,0.07), transparent 30%), var(--color-black);
 }
@@ -12,6 +13,7 @@
   z-index: 2;
   width: min(calc(100% - 48px), var(--container));
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -753,5 +755,75 @@
   }
   .project-info h3 {
     font-size: 36px;
+  }
+}
+
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+/*
+ * En pantallas táctiles el :hover se queda fijado tras el toque:
+ * anulamos solo los desplazamientos.
+ */
+@media (hover: none) {
+
+  .btn:hover,
+  .service-card:hover,
+  .project-card:hover,
+  .projects-more-button:hover {
+    transform: none;
+  }
+}
+
+
+/* El hero deja de forzar pantalla completa cuando no cabe. */
+@media (max-width: 700px) {
+
+  .hero,
+  .hero-container {
+    min-height: auto;
+  }
+
+  .hero-container {
+    padding-bottom: 80px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+
+/* Móviles estrechos: se recupera aire y se evita el desborde. */
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: clamp(34px, 11vw, 45px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .stat {
+    min-width: 0;
+    flex: 1 1 40%;
+  }
+
+  .visual-content h2 {
+    font-size: 30px;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .service-card,
+  .project-info {
+    padding: 24px 20px;
   }
 }
