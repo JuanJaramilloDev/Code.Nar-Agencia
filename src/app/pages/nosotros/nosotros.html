@@ -1,0 +1,332 @@
+<!-- ================================
+     HERO
+     ================================ -->
+
+<section class="hero-nosotros">
+
+    <div class="hero-nosotros-glow"></div>
+
+    <div class="section-container">
+        <div class="hero-nosotros-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                NOSOTROS · CODE.NAR
+            </div>
+
+            <h1>
+                Cinco personas
+                <span>obsesionadas con que funcione.</span>
+            </h1>
+
+            <p class="hero-nosotros-description">
+                No somos una agencia con veinte capas de intermediarios.
+                Somos un equipo pequeño que diseña, programa y entrega,
+                y que responde por lo que entrega.
+            </p>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================================
+     MÉTRICAS
+     ================================ -->
+
+<section class="metricas-seccion">
+    <div class="section-container">
+        <div class="metricas">
+
+            @for (metrica of metricas; track metrica.etiqueta) {
+            <div class="metrica">
+                <strong>{{ metrica.valor }}</strong>
+                <span class="metrica-etiqueta">{{ metrica.etiqueta }}</span>
+                <small>{{ metrica.detalle }}</small>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================
+     ORIGEN
+     ================================ -->
+
+<section class="origen">
+    <div class="section-container">
+        <div class="origen-grid">
+
+            <div class="origen-texto reveal">
+
+                <div class="section-eyebrow">
+                    <span></span>
+                    CÓMO EMPEZÓ
+                </div>
+
+                <h2>
+                    Nació de una molestia
+                    <span>compartida.</span>
+                </h2>
+
+                <p>
+                    Veíamos lo mismo una y otra vez: negocios que pagaban
+                    por una página web y terminaban con una plantilla
+                    genérica, lenta, imposible de actualizar y atada a
+                    quien la hizo.
+                </p>
+
+                <p>
+                    Code.Nar surge de juntar a cinco personas que ya
+                    trabajaban por separado en desarrollo, diseño y
+                    producto, con una idea simple: construir cada proyecto
+                    como si fuera nuestro, entregarlo completo y dejar al
+                    cliente con el control de lo que pagó.
+                </p>
+
+                <p>
+                    Empezamos con negocios de Nariño y hoy trabajamos en
+                    remoto con clientes de toda Colombia. El tamaño del
+                    equipo no ha cambiado, y esa es la idea: preferimos
+                    pocos proyectos bien hechos.
+                </p>
+
+                <a routerLink="/proyectos" class="origen-link">
+                    Ver lo que hemos construido
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <div class="origen-visual reveal">
+                <div class="origen-card">
+
+                    <div class="origen-card-top">
+                        <span>CODE.NAR</span>
+                        <span>COLOMBIA</span>
+                    </div>
+
+                    <div class="origen-card-body">
+                        <span class="origen-card-label">NUESTRA REGLA</span>
+
+                        <h3>
+                            Si no lo
+                            <br />
+                            usaríamos,
+                            <br />
+                            <em>no lo entregamos.</em>
+                        </h3>
+
+                        <div class="origen-card-linea"></div>
+                    </div>
+
+                    <div class="origen-card-bottom">
+                        <span>DESDE 2026</span>
+                        <span>PASTO · NARIÑO</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================
+     PRINCIPIOS
+     ================================ -->
+
+<section class="principios">
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+            <div class="section-eyebrow">
+                <span></span>
+                CÓMO TRABAJAMOS
+            </div>
+
+            <h2>
+                Cuatro reglas que
+                <span>no negociamos.</span>
+            </h2>
+
+            <p>
+                No son valores de folleto. Son las decisiones que tomamos
+                cuando un proyecto se pone difícil.
+            </p>
+        </div>
+
+        <div class="principios-grid">
+
+            @for (principio of principios; track principio.numero) {
+            <article class="principio reveal">
+                <div class="principio-numero">{{ principio.numero }}</div>
+                <div class="principio-icono">{{ principio.icono }}</div>
+
+                <h3>{{ principio.titulo }}</h3>
+                <p>{{ principio.texto }}</p>
+            </article>
+            }
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================
+     SECCIÓN CINEMATOGRÁFICA
+     ================================ -->
+
+<section class="declaracion">
+    <div class="declaracion-glow"></div>
+
+    <div class="section-container">
+        <div class="declaracion-content reveal">
+
+            <span class="declaracion-comilla">“</span>
+
+            <p class="declaracion-texto">
+                Una página web no es un gasto de imagen.
+                <em>Es el primer empleado que atiende a tu cliente</em>
+                cuando tú ya cerraste.
+            </p>
+
+            <span class="declaracion-firma">— El equipo de Code.Nar</span>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================
+     EQUIPO
+     ================================ -->
+
+<section class="equipo-seccion">
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+            <div class="section-eyebrow">
+                <span></span>
+                EL EQUIPO
+            </div>
+
+            <h2>
+                Cinco disciplinas,
+                <span>un solo proyecto.</span>
+            </h2>
+
+            <p>
+                Cada proyecto pasa por las cinco. No entregamos nada que
+                no haya sido diseñado, construido, revisado y probado.
+            </p>
+        </div>
+
+        <div class="equipo-grid">
+
+            @for (miembro of equipo; track miembro.rol) {
+            <article class="miembro reveal">
+
+                <div class="miembro-avatar" aria-hidden="true">
+                    {{ miembro.inicial }}
+                </div>
+
+                <h3>{{ miembro.rol }}</h3>
+                <span class="miembro-foco">{{ miembro.foco }}</span>
+                <p>{{ miembro.texto }}</p>
+
+            </article>
+            }
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================
+     STACK
+     ================================ -->
+
+<section class="stack-seccion">
+    <div class="section-container">
+
+        <div class="stack-grid">
+
+            <div class="stack-texto reveal">
+
+                <div class="section-eyebrow">
+                    <span></span>
+                    HERRAMIENTAS
+                </div>
+
+                <h2>
+                    Elegimos la herramienta
+                    <span>según el problema.</span>
+                </h2>
+
+                <p>
+                    No forzamos todos los proyectos dentro del mismo
+                    framework porque sea el que más nos gusta. Una landing
+                    page no necesita lo mismo que un sistema de gestión, y
+                    cobrarte por complejidad innecesaria sería deshonesto.
+                </p>
+
+            </div>
+
+            <div class="stack-lista reveal">
+                @for (tec of stack; track tec.nombre) {
+                <div class="stack-item">
+                    <strong>{{ tec.nombre }}</strong>
+                    <span>{{ tec.tipo }}</span>
+                </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================
+     CTA FINAL
+     ================================ -->
+
+<section class="cta-final">
+    <div class="cta-glow"></div>
+
+    <div class="section-container">
+        <div class="cta-content reveal">
+
+            <h2>
+                ¿Trabajamos
+                <span>juntos?</span>
+            </h2>
+
+            <p>
+                Cuéntanos qué necesitas. Te respondemos en menos de
+                24 horas hábiles, sin compromiso y sin discursos de venta.
+            </p>
+
+            <div class="cta-actions">
+                <a routerLink="/contacto" class="btn btn-primary">
+                    Hablemos de tu proyecto
+                    <span>↗</span>
+                </a>
+
+                <a routerLink="/servicios" class="btn btn-secondary">
+                    Ver servicios
+                    <span>→</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>

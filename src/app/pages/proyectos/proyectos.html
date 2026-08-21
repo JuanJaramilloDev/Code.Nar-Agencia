@@ -1,0 +1,169 @@
+<div class="projects-page">
+
+    <div class="projects-container">
+
+        <!-- =========================================
+             HERO
+             ========================================= -->
+
+        <section class="projects-hero">
+
+            <div class="section-eyebrow">
+                <span></span>
+                NUESTROS PROYECTOS
+            </div>
+
+            <h1>
+                Trabajo que
+                <span>habla por nosotros.</span>
+            </h1>
+
+            <p>
+                Explora algunos de los proyectos que hemos desarrollado
+                para empresas, emprendimientos y profesionales,
+                combinando diseño, tecnología y funcionalidad.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             PROYECTOS
+             ========================================= -->
+
+        <section class="projects-section">
+
+            <div class="projects-header">
+
+                <div>
+                    <span class="projects-label">
+                        PORTAFOLIO
+                    </span>
+
+                    <h2>
+                        Proyectos
+                        <em>seleccionados.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    Cada proyecto parte de una necesidad diferente.
+                    Nuestro objetivo es convertirla en una experiencia
+                    digital funcional, profesional y preparada para crecer.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                @for (proyecto of proyectos; track proyecto.numero) {
+
+                <article class="project-card">
+
+                    <!-- IMAGEN -->
+
+                    <div class="project-image">
+
+                        <img [src]="proyecto.imagen" [alt]="proyecto.titulo + ' - proyecto desarrollado por Code.Nar'"
+                            loading="lazy">
+
+                        <div class="project-number">
+                            {{ proyecto.numero }}
+                        </div>
+
+                        <div class="project-category">
+                            {{ proyecto.categoria }}
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTENIDO -->
+
+                    <div class="project-content">
+
+                        <h3>
+                            {{ proyecto.titulo }}
+                        </h3>
+
+                        <p>
+                            {{ proyecto.descripcion }}
+                        </p>
+
+
+                        <!-- TECNOLOGÍAS -->
+
+                        <div class="project-tech">
+
+                            @for (tecnologia of proyecto.tecnologias; track tecnologia) {
+
+                            <span>
+                                {{ tecnologia }}
+                            </span>
+
+                            }
+
+                        </div>
+
+
+                        <!-- BOTÓN -->
+
+                        <a [href]="proyecto.url" target="_blank" rel="noopener noreferrer" class="project-link">
+
+                            <span>
+                                Ver sitio
+                            </span>
+
+                            <strong>
+                                ↗
+                            </strong>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+             ========================================= -->
+
+        <section class="projects-cta">
+
+            <div class="projects-cta-content">
+
+                <div class="section-eyebrow">
+                    <span></span>
+                    ¿TIENES UN PROYECTO?
+                </div>
+
+                <h2>
+                    El próximo proyecto
+                    <em>puede ser el tuyo.</em>
+                </h2>
+
+                <p>
+                    Cuéntanos qué tienes en mente y construyamos
+                    juntos una solución digital para tu negocio.
+                </p>
+
+                <a href="https://wa.me/573205319390" target="_blank" rel="noopener noreferrer" class="cta-button">
+                    Hablemos de tu proyecto
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
