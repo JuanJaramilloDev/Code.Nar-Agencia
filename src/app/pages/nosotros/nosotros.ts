@@ -8,6 +8,8 @@ import {
 
 import { RouterLink } from '@angular/router';
 
+import { Expandible } from '../../directives/expandible';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -17,7 +19,7 @@ import { Seo } from '../../services/seo';
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, Expandible],
   templateUrl: './nosotros.html',
   styleUrl: './nosotros.css',
 })

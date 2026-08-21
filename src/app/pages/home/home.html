@@ -121,90 +121,115 @@
 
         <div class="services-grid">
 
-            <article class="service-card">
+            <article class="service-card exp" appExpandible #exp01="expandible">
                 <div class="service-number">01</div>
 
                 <a routerLink="/servicios" fragment="desarrollo-web" class="service-icon"
-                    aria-label="Ver servicio">
+                    aria-label="Ver servicio de Desarrollo Web">
                     ↗
                 </a>
 
                 <h3>Desarrollo Web</h3>
 
-                <p>
-                    Sitios web modernos, rápidos y adaptados a las
-                    necesidades de cada empresa o proyecto.
-                </p>
+                <div class="exp-detalle" id="detalle-desarrollo-web">
+                    <div>
+                        <p>Sitios web modernos, rápidos y adaptados a las necesidades de cada empresa o proyecto.</p>
 
-                <a routerLink="/servicios" fragment="desarrollo-web" class="service-link">
-                    Explorar servicio →
-                </a>
+                        <a routerLink="/servicios" fragment="desarrollo-web" class="service-link">
+                            Explorar servicio →
+                        </a>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp01.alternar()"
+                    [attr.aria-expanded]="exp01.abierta()" aria-controls="detalle-desarrollo-web"
+                    [attr.aria-label]="exp01.abierta() ? 'Ocultar detalle de Desarrollo Web' : 'Ver detalle de Desarrollo Web'">
+                    +
+                </button>
             </article>
 
 
-            <article class="service-card">
+            <article class="service-card exp" appExpandible #exp02="expandible">
                 <div class="service-number">02</div>
 
                 <a routerLink="/servicios" fragment="tiendas-online" class="service-icon"
-                    aria-label="Ver servicio">
+                    aria-label="Ver servicio de Tiendas Online">
                     ◇
                 </a>
 
                 <h3>Tiendas Online</h3>
 
-                <p>
-                    Tiendas digitales diseñadas para vender productos,
-                    gestionar pedidos y ofrecer una experiencia
-                    de compra profesional.
-                </p>
+                <div class="exp-detalle" id="detalle-tiendas-online">
+                    <div>
+                        <p>Tiendas digitales diseñadas para vender productos, gestionar pedidos y ofrecer una experiencia de compra profesional.</p>
 
-                <a routerLink="/servicios" fragment="tiendas-online" class="service-link">
-                    Explorar servicio →
-                </a>
+                        <a routerLink="/servicios" fragment="tiendas-online" class="service-link">
+                            Explorar servicio →
+                        </a>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp02.alternar()"
+                    [attr.aria-expanded]="exp02.abierta()" aria-controls="detalle-tiendas-online"
+                    [attr.aria-label]="exp02.abierta() ? 'Ocultar detalle de Tiendas Online' : 'Ver detalle de Tiendas Online'">
+                    +
+                </button>
             </article>
 
 
-            <article class="service-card">
+            <article class="service-card exp" appExpandible #exp03="expandible">
                 <div class="service-number">03</div>
 
                 <a routerLink="/servicios" fragment="sistemas-web" class="service-icon"
-                    aria-label="Ver servicio">
+                    aria-label="Ver servicio de Sistemas Web">
                     +
                 </a>
 
                 <h3>Sistemas Web</h3>
 
-                <p>
-                    Plataformas y sistemas personalizados para
-                    automatizar procesos y mejorar la operación
-                    de los negocios.
-                </p>
+                <div class="exp-detalle" id="detalle-sistemas-web">
+                    <div>
+                        <p>Plataformas y sistemas personalizados para automatizar procesos y mejorar la operación de los negocios.</p>
 
-                <a routerLink="/servicios" fragment="sistemas-web" class="service-link">
-                    Explorar servicio →
-                </a>
+                        <a routerLink="/servicios" fragment="sistemas-web" class="service-link">
+                            Explorar servicio →
+                        </a>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp03.alternar()"
+                    [attr.aria-expanded]="exp03.abierta()" aria-controls="detalle-sistemas-web"
+                    [attr.aria-label]="exp03.abierta() ? 'Ocultar detalle de Sistemas Web' : 'Ver detalle de Sistemas Web'">
+                    +
+                </button>
             </article>
 
 
-            <article class="service-card">
+            <article class="service-card exp" appExpandible #exp04="expandible">
                 <div class="service-number">04</div>
 
                 <a routerLink="/servicios" fragment="soluciones-digitales" class="service-icon"
-                    aria-label="Ver servicio">
+                    aria-label="Ver servicio de Soluciones Digitales">
                     ◌
                 </a>
 
                 <h3>Soluciones Digitales</h3>
 
-                <p>
-                    Integraciones, automatizaciones y herramientas
-                    digitales construidas alrededor de cada
-                    necesidad.
-                </p>
+                <div class="exp-detalle" id="detalle-soluciones-digitales">
+                    <div>
+                        <p>Integraciones, automatizaciones y herramientas digitales construidas alrededor de cada necesidad.</p>
 
-                <a routerLink="/servicios" fragment="soluciones-digitales" class="service-link">
-                    Explorar servicio →
-                </a>
+                        <a routerLink="/servicios" fragment="soluciones-digitales" class="service-link">
+                            Explorar servicio →
+                        </a>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp04.alternar()"
+                    [attr.aria-expanded]="exp04.abierta()" aria-controls="detalle-soluciones-digitales"
+                    [attr.aria-label]="exp04.abierta() ? 'Ocultar detalle de Soluciones Digitales' : 'Ver detalle de Soluciones Digitales'">
+                    +
+                </button>
             </article>
 
         </div>

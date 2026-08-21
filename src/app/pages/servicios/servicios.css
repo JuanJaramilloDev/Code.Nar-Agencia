@@ -789,3 +789,61 @@
         letter-spacing: -1px;
     }
 }
+
+
+/* ================================
+   TARJETAS DE RESUMEN EXPANDIBLES
+   ================================ */
+
+/*
+ * La tarjeta dejó de ser un <a> envolvente: el enlace vive ahora
+ * dentro del detalle, así que recuperamos el cursor y el foco.
+ */
+.overview-card {
+    cursor: default;
+}
+
+.overview-card .overview-card-top {
+    align-items: center;
+}
+
+.overview-card .exp-detalle > div {
+    padding-top: 12px;
+}
+
+.overview-card .exp-detalle p {
+    margin: 0;
+}
+
+.overview-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--color-gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity var(--transition);
+}
+
+.overview-link:hover {
+    opacity: 0.75;
+}
+
+.overview-link:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* Plegadas ya no necesitan reservar alto. */
+.overview-card {
+    min-height: 0;
+}
+
+@media (max-width: 650px) {
+
+    .overview-card {
+        min-height: 0;
+    }
+}

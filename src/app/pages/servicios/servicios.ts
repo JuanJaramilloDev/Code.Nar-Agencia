@@ -1,9 +1,13 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+import { Expandible } from '../../directives/expandible';
 import { Seo } from '../../services/seo';
 
 @Component({
   selector: 'app-servicios',
   standalone: true,
+  imports: [RouterLink, Expandible],
   templateUrl: './servicios.html',
   styleUrl: './servicios.css'
 })
