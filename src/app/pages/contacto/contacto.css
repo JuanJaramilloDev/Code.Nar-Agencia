@@ -1018,3 +1018,39 @@ a.canal:hover .canal-body strong {
     font-size: 13.5px;
   }
 }
+
+
+/* ================================
+   PASOS EXPANDIBLES
+   ================================ */
+
+.paso .exp-detalle > div {
+  padding-top: 14px;
+}
+
+.paso .exp-detalle p {
+  margin: 0 0 22px;
+}
+
+.paso .exp-toggle {
+  position: absolute;
+  top: 30px;
+  right: 28px;
+}
+
+/* Con el detalle plegado el tiempo queda pegado al título. */
+.paso-tiempo {
+  margin-top: 18px;
+}
+
+.paso.exp-abierta .paso-tiempo {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+
+  .paso .exp-toggle {
+    top: 24px;
+    right: 22px;
+  }
+}

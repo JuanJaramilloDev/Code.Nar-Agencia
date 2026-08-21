@@ -923,3 +923,71 @@
     font-size: 26px;
   }
 }
+
+
+/* ================================
+   TARJETAS EXPANDIBLES
+   ================================ */
+
+/* El número deja sitio al botón de plegar cuando aparece. */
+.principio.exp-tactil .principio-numero {
+  right: 70px;
+}
+
+.principio .exp-toggle {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+}
+
+.principio .exp-detalle > div {
+  padding-top: 14px;
+}
+
+.principio .exp-detalle p {
+  margin: 0;
+}
+
+.miembro {
+  position: relative;
+}
+
+.miembro .exp-toggle {
+  position: absolute;
+  top: 28px;
+  right: 24px;
+}
+
+.miembro .exp-detalle > div {
+  padding-top: 14px;
+}
+
+.miembro .exp-detalle p {
+  margin: 0;
+}
+
+/* Sin detalle desplegado la tarjeta se queda corta: se compensa. */
+.miembro-foco {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+
+  .principio .exp-toggle,
+  .miembro .exp-toggle {
+    top: 22px;
+    right: 20px;
+  }
+
+  .principio.exp-tactil .principio-numero {
+    right: 64px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  /* Aquí el número ya es estático: no hay solape que evitar. */
+  .principio.exp-tactil .principio-numero {
+    right: auto;
+  }
+}

@@ -15,6 +15,8 @@ import {
 
 import { RouterLink } from '@angular/router';
 
+import { Expandible } from '../../directives/expandible';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -42,7 +44,7 @@ type CampoContacto =
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, Expandible],
   templateUrl: './contacto.html',
   styleUrl: './contacto.css',
 })

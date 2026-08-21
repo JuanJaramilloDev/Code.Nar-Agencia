@@ -51,11 +51,16 @@
 
                 <!-- 01 -->
 
-                <a href="/servicios#desarrollo-web" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS01="expandible">
 
                     <div class="overview-card-top">
                         <span>01</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS01.alternar()"
+                            [attr.aria-expanded]="expS01.abierta()" aria-controls="resumen-desarrollo-web"
+                            [attr.aria-label]="expS01.abierta() ? 'Ocultar detalle de Desarrollo Web' : 'Ver detalle de Desarrollo Web'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -68,23 +73,33 @@
                             Desarrollo Web
                         </h3>
 
-                        <p>
-                            Sitios web modernos, rápidos y profesionales
-                            para representar tu negocio.
-                        </p>
+                        <div class="exp-detalle" id="resumen-desarrollo-web">
+                            <div>
+                                <p>Sitios web modernos, rápidos y profesionales para representar tu negocio.</p>
+
+                                <a routerLink="/servicios" fragment="desarrollo-web" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
 
                 <!-- 02 -->
 
-                <a href="/servicios#tiendas-online" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS02="expandible">
 
                     <div class="overview-card-top">
                         <span>02</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS02.alternar()"
+                            [attr.aria-expanded]="expS02.abierta()" aria-controls="resumen-tiendas-online"
+                            [attr.aria-label]="expS02.abierta() ? 'Ocultar detalle de Tiendas Online' : 'Ver detalle de Tiendas Online'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -97,23 +112,33 @@
                             Tiendas Online
                         </h3>
 
-                        <p>
-                            E-commerce diseñados para vender productos
-                            y facilitar la gestión de pedidos.
-                        </p>
+                        <div class="exp-detalle" id="resumen-tiendas-online">
+                            <div>
+                                <p>E-commerce diseñados para vender productos y facilitar la gestión de pedidos.</p>
+
+                                <a routerLink="/servicios" fragment="tiendas-online" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
 
                 <!-- 03 -->
 
-                <a href="/servicios#sistemas-web" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS03="expandible">
 
                     <div class="overview-card-top">
                         <span>03</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS03.alternar()"
+                            [attr.aria-expanded]="expS03.abierta()" aria-controls="resumen-sistemas-web"
+                            [attr.aria-label]="expS03.abierta() ? 'Ocultar detalle de Sistemas Web' : 'Ver detalle de Sistemas Web'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -126,23 +151,33 @@
                             Sistemas Web
                         </h3>
 
-                        <p>
-                            Plataformas y herramientas digitales
-                            para optimizar procesos.
-                        </p>
+                        <div class="exp-detalle" id="resumen-sistemas-web">
+                            <div>
+                                <p>Plataformas y herramientas digitales para optimizar procesos.</p>
+
+                                <a routerLink="/servicios" fragment="sistemas-web" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
 
                 <!-- 04 -->
 
-                <a href="/servicios#soluciones-digitales" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS04="expandible">
 
                     <div class="overview-card-top">
                         <span>04</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS04.alternar()"
+                            [attr.aria-expanded]="expS04.abierta()" aria-controls="resumen-soluciones-digitales"
+                            [attr.aria-label]="expS04.abierta() ? 'Ocultar detalle de Soluciones Digitales' : 'Ver detalle de Soluciones Digitales'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -155,23 +190,33 @@
                             Soluciones Digitales
                         </h3>
 
-                        <p>
-                            Automatizaciones, APIs e integraciones
-                            adaptadas a cada negocio.
-                        </p>
+                        <div class="exp-detalle" id="resumen-soluciones-digitales">
+                            <div>
+                                <p>Automatizaciones, APIs e integraciones adaptadas a cada negocio.</p>
+
+                                <a routerLink="/servicios" fragment="soluciones-digitales" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
 
                 <!-- 05 -->
 
-                <a href="/servicios#landing-pages" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS05="expandible">
 
                     <div class="overview-card-top">
                         <span>05</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS05.alternar()"
+                            [attr.aria-expanded]="expS05.abierta()" aria-controls="resumen-landing-pages"
+                            [attr.aria-label]="expS05.abierta() ? 'Ocultar detalle de Landing Pages' : 'Ver detalle de Landing Pages'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -184,23 +229,33 @@
                             Landing Pages
                         </h3>
 
-                        <p>
-                            Páginas enfocadas en presentar productos,
-                            servicios y generar conversiones.
-                        </p>
+                        <div class="exp-detalle" id="resumen-landing-pages">
+                            <div>
+                                <p>Páginas enfocadas en presentar productos, servicios y generar conversiones.</p>
+
+                                <a routerLink="/servicios" fragment="landing-pages" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
 
                 <!-- 06 -->
 
-                <a href="/servicios#marketing-digital" class="overview-card">
+                <article class="overview-card exp" appExpandible #expS06="expandible">
 
                     <div class="overview-card-top">
                         <span>06</span>
-                        <span>↗</span>
+
+                        <button type="button" class="exp-toggle" (click)="expS06.alternar()"
+                            [attr.aria-expanded]="expS06.abierta()" aria-controls="resumen-marketing-digital"
+                            [attr.aria-label]="expS06.abierta() ? 'Ocultar detalle de Marketing Digital' : 'Ver detalle de Marketing Digital'">
+                            +
+                        </button>
                     </div>
 
                     <div>
@@ -213,14 +268,19 @@
                             Marketing Digital
                         </h3>
 
-                        <p>
-                            Estrategias digitales para aumentar
-                            visibilidad, alcance y oportunidades.
-                        </p>
+                        <div class="exp-detalle" id="resumen-marketing-digital">
+                            <div>
+                                <p>Estrategias digitales para aumentar visibilidad, alcance y oportunidades.</p>
+
+                                <a routerLink="/servicios" fragment="marketing-digital" class="overview-link">
+                                    Ver servicio ↗
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 
-                </a>
+                </article>
 
             </div>
 

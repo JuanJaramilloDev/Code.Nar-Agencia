@@ -164,12 +164,23 @@
         <div class="principios-grid">
 
             @for (principio of principios; track principio.numero) {
-            <article class="principio reveal">
+            <article class="principio reveal exp" appExpandible #expP="expandible">
                 <div class="principio-numero">{{ principio.numero }}</div>
                 <div class="principio-icono">{{ principio.icono }}</div>
 
                 <h3>{{ principio.titulo }}</h3>
-                <p>{{ principio.texto }}</p>
+
+                <div class="exp-detalle" [id]="'principio-' + principio.numero">
+                    <div>
+                        <p>{{ principio.texto }}</p>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="expP.alternar()"
+                    [attr.aria-expanded]="expP.abierta()" [attr.aria-controls]="'principio-' + principio.numero"
+                    [attr.aria-label]="(expP.abierta() ? 'Ocultar' : 'Ver') + ' detalle de ' + principio.titulo">
+                    +
+                </button>
             </article>
             }
 
@@ -231,7 +242,7 @@
         <div class="equipo-grid">
 
             @for (miembro of equipo; track miembro.rol) {
-            <article class="miembro reveal">
+            <article class="miembro reveal exp" appExpandible #expM="expandible">
 
                 <div class="miembro-avatar" aria-hidden="true">
                     {{ miembro.inicial }}
@@ -239,7 +250,18 @@
 
                 <h3>{{ miembro.rol }}</h3>
                 <span class="miembro-foco">{{ miembro.foco }}</span>
-                <p>{{ miembro.texto }}</p>
+
+                <div class="exp-detalle" [id]="'miembro-' + miembro.rol">
+                    <div>
+                        <p>{{ miembro.texto }}</p>
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="expM.alternar()"
+                    [attr.aria-expanded]="expM.abierta()" [attr.aria-controls]="'miembro-' + miembro.rol"
+                    [attr.aria-label]="(expM.abierta() ? 'Ocultar' : 'Ver') + ' detalle de ' + miembro.rol">
+                    +
+                </button>
 
             </article>
             }
