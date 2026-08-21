@@ -1,21 +1,58 @@
-<header class="navbar">
+<header class="navbar" [class.navbar-scrolled]="scrolled()">
     <div class="navbar-container">
-        <a href="/" class="brand" aria-label="Code.Nar - Inicio">
-            <img src="/images/foto1.png" alt="Logo de Code.Nar" class="brand-mark" />
+
+        <a routerLink="/" class="brand" aria-label="Code.Nar - Inicio">
+            <img src="/images/foto1.png" alt="" class="brand-mark" width="42" height="42" />
             <span class="brand-name">Code.<span>Nar</span></span>
         </a>
 
         <nav class="desktop-nav" aria-label="Navegación principal">
-            <a routerLink="/">Inicio</a>
-            <a href="/servicios">Servicios</a>
-            <a href="/proyectos">Proyectos</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/proceso">Proceso</a>
+            @for (enlace of enlaces; track enlace.ruta) {
+            <a [routerLink]="enlace.ruta" routerLinkActive="activo"
+                [routerLinkActiveOptions]="{ exact: enlace.exacto }">
+                {{ enlace.texto }}
+            </a>
+            }
         </nav>
 
-        <a href="#contacto" class="navbar-cta">
+        <a routerLink="/contacto" class="navbar-cta">
             Hablemos
             <span>↗</span>
         </a>
+
+        <button type="button" class="menu-toggle" (click)="alternarMenu()" [attr.aria-expanded]="menuAbierto()"
+            aria-controls="menu-movil" [attr.aria-label]="menuAbierto() ? 'Cerrar menú' : 'Abrir menú'">
+            <span class="menu-toggle-linea" [class.abierta]="menuAbierto()"></span>
+            <span class="menu-toggle-linea" [class.abierta]="menuAbierto()"></span>
+        </button>
+
     </div>
 </header>
+
+
+<!-- ================================
+     MENÚ MÓVIL
+     ================================ -->
+
+<div class="menu-movil" id="menu-movil" [class.abierto]="menuAbierto()" [attr.inert]="menuAbierto() ? null : ''">
+
+    <nav aria-label="Navegación móvil">
+        @for (enlace of enlaces; track enlace.ruta) {
+        <a [routerLink]="enlace.ruta" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: enlace.exacto }"
+            (click)="cerrarMenu()">
+            {{ enlace.texto }}
+            <span>↗</span>
+        </a>
+        }
+    </nav>
+
+    <a routerLink="/contacto" class="menu-movil-cta" (click)="cerrarMenu()">
+        Hablemos de tu proyecto
+        <span>↗</span>
+    </a>
+
+</div>
+
+@if (menuAbierto()) {
+<div class="menu-overlay" (click)="cerrarMenu()"></div>
+}

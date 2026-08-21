@@ -1,1 +1,491 @@
-<p>contacto works!</p>
+<!-- ================================
+     HERO
+     ================================ -->
+
+<section class="hero-contacto">
+
+    <div class="hero-contacto-glow"></div>
+
+    <div class="section-container">
+        <div class="hero-contacto-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                CONTACTO · RESPUESTA EN 24 H
+            </div>
+
+            <h1>
+                Cuéntanos tu idea y
+                <span>la hacemos realidad.</span>
+            </h1>
+
+            <p class="hero-contacto-description">
+                No necesitas tener todo definido. Escríbenos qué quieres
+                lograr y te proponemos el camino más corto para
+                conseguirlo, sin compromiso.
+            </p>
+
+            <div class="hero-contacto-badges">
+                <span>✦ Diagnóstico gratuito</span>
+                <span>✦ Sin permanencia</span>
+                <span>✦ Trato directo con quien desarrolla</span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================================
+     FORMULARIO + CANALES
+     ================================ -->
+
+<section class="contacto-main">
+    <div class="section-container">
+        <div class="contacto-grid">
+
+            <!-- ---------- Formulario ---------- -->
+
+            <div class="form-panel reveal">
+
+                @if (estado() === 'success') {
+
+                <div class="form-success" role="status" aria-live="polite">
+                    <div class="form-success-icon">✓</div>
+
+                    <h2>Mensaje recibido</h2>
+
+                    <p>
+                        Gracias por escribirnos. Revisaremos tu proyecto y
+                        te responderemos al correo que nos dejaste en
+                        menos de 24 horas hábiles.
+                    </p>
+
+                    <button type="button" class="btn btn-secondary" (click)="volverAEscribir()">
+                        Enviar otro mensaje
+                        <span>→</span>
+                    </button>
+                </div>
+
+                } @else {
+
+                <div class="form-heading">
+                    <h2>Escríbenos</h2>
+                    <p>Los campos marcados con * son obligatorios.</p>
+                </div>
+
+                <form [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+
+                    <div class="form-row">
+
+                        <div class="campo" [class.campo-error-activo]="fallo('nombre')">
+                            <label for="nombre">Nombre completo *</label>
+
+                            <input id="nombre" type="text" formControlName="nombre" autocomplete="name"
+                                placeholder="Ana Martínez" [attr.aria-invalid]="fallo('nombre')"
+                                [attr.aria-describedby]="fallo('nombre') ? 'error-nombre' : null" />
+
+                            @if (fallo('nombre')) {
+                            <small id="error-nombre" class="campo-error">
+                                Necesitamos tu nombre para saber cómo dirigirnos a ti.
+                            </small>
+                            }
+                        </div>
+
+                        <div class="campo" [class.campo-error-activo]="fallo('email')">
+                            <label for="email">Correo electrónico *</label>
+
+                            <input id="email" type="email" formControlName="email" autocomplete="email"
+                                placeholder="ana@empresa.com" [attr.aria-invalid]="fallo('email')"
+                                [attr.aria-describedby]="fallo('email') ? 'error-email' : null" />
+
+                            @if (fallo('email')) {
+                            <small id="error-email" class="campo-error">
+                                Escribe un correo válido: es la vía por la que te responderemos.
+                            </small>
+                            }
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="campo" [class.campo-error-activo]="fallo('telefono')">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+
+                            <input id="telefono" type="tel" formControlName="telefono" autocomplete="tel"
+                                placeholder="+57 300 000 0000" [attr.aria-invalid]="fallo('telefono')"
+                                [attr.aria-describedby]="fallo('telefono') ? 'error-telefono' : null" />
+
+                            @if (fallo('telefono')) {
+                            <small id="error-telefono" class="campo-error">
+                                Revisa el número: solo dígitos, espacios y los signos + ( ) -
+                            </small>
+                            }
+                        </div>
+
+                        <div class="campo">
+                            <label for="empresa">Empresa o proyecto</label>
+
+                            <input id="empresa" type="text" formControlName="empresa" autocomplete="organization"
+                                placeholder="Opcional" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="campo" [class.campo-error-activo]="fallo('servicio')">
+                            <label for="servicio">¿Qué necesitas? *</label>
+
+                            <select id="servicio" formControlName="servicio" [attr.aria-invalid]="fallo('servicio')"
+                                [attr.aria-describedby]="fallo('servicio') ? 'error-servicio' : null">
+
+                                <option value="" disabled>Selecciona una opción</option>
+
+                                @for (servicio of servicios; track servicio) {
+                                <option [value]="servicio">{{ servicio }}</option>
+                                }
+                            </select>
+
+                            @if (fallo('servicio')) {
+                            <small id="error-servicio" class="campo-error">
+                                Elige una opción. Si dudas, marca «Aún no lo tengo claro».
+                            </small>
+                            }
+                        </div>
+
+                        <div class="campo">
+                            <label for="presupuesto">Presupuesto estimado</label>
+
+                            <select id="presupuesto" formControlName="presupuesto">
+                                <option value="">Prefiero no indicarlo</option>
+
+                                @for (rango of presupuestos; track rango) {
+                                <option [value]="rango">{{ rango }}</option>
+                                }
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo" [class.campo-error-activo]="fallo('mensaje')">
+                        <label for="mensaje">Cuéntanos sobre tu proyecto *</label>
+
+                        <textarea id="mensaje" formControlName="mensaje" rows="5"
+                            placeholder="¿Qué problema quieres resolver? ¿Tienes referencias o plazos en mente?"
+                            [attr.aria-invalid]="fallo('mensaje')"
+                            [attr.aria-describedby]="fallo('mensaje') ? 'error-mensaje' : null"></textarea>
+
+                        @if (fallo('mensaje')) {
+                        <small id="error-mensaje" class="campo-error">
+                            Escribe al menos 20 caracteres para que podamos entender qué necesitas.
+                        </small>
+                        }
+                    </div>
+
+
+                    <div class="campo campo-check" [class.campo-error-activo]="fallo('politica')">
+                        <label for="politica">
+                            <input id="politica" type="checkbox" formControlName="politica"
+                                [attr.aria-invalid]="fallo('politica')" />
+
+                            <span>
+                                Acepto que Code.Nar trate mis datos para responder
+                                a esta solicitud. *
+                            </span>
+                        </label>
+
+                        @if (fallo('politica')) {
+                        <small class="campo-error">
+                            Necesitamos tu autorización para poder contactarte.
+                        </small>
+                        }
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary form-submit" [disabled]="estado() === 'sending'">
+
+                        @if (estado() === 'sending') {
+                        <span class="spinner" aria-hidden="true"></span>
+                        Enviando...
+                        } @else {
+                        Enviar mensaje
+                        <span>↗</span>
+                        }
+
+                    </button>
+
+
+                    @if (estado() === 'error') {
+                    <p class="form-error-global" role="alert">
+                        No pudimos enviar el mensaje. Inténtalo de nuevo o
+                        escríbenos directamente por WhatsApp.
+                    </p>
+                    }
+
+                </form>
+
+                }
+
+            </div>
+
+
+            <!-- ---------- Canales directos ---------- -->
+
+            <aside class="canales reveal">
+
+                <h2>O escríbenos directo</h2>
+
+                <p class="canales-intro">
+                    Si prefieres saltarte el formulario, estos son
+                    nuestros canales abiertos.
+                </p>
+
+                <a class="canal" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">
+                    <span class="canal-icon">◈</span>
+
+                    <span class="canal-body">
+                        <strong>WhatsApp</strong>
+                        <small>+57 300 000 0000</small>
+                    </span>
+
+                    <span class="canal-arrow">↗</span>
+                </a>
+
+                <a class="canal" href="mailto:hola&#64;codenar.net">
+                    <span class="canal-icon">✉</span>
+
+                    <span class="canal-body">
+                        <strong>Correo</strong>
+                        <small>hola&#64;codenar.net</small>
+                    </span>
+
+                    <span class="canal-arrow">↗</span>
+                </a>
+
+                <div class="canal canal-static">
+                    <span class="canal-icon">◎</span>
+
+                    <span class="canal-body">
+                        <strong>Dónde estamos</strong>
+                        <small>Pasto, Nariño — Colombia</small>
+                    </span>
+                </div>
+
+                <div class="canal canal-static">
+                    <span class="canal-icon">◔</span>
+
+                    <span class="canal-body">
+                        <strong>Horario</strong>
+                        <small>Lunes a viernes · 8:00 — 18:00</small>
+                    </span>
+                </div>
+
+                <div class="canales-nota">
+                    <strong>Trabajamos en remoto</strong>
+                    <p>
+                        Atendemos proyectos en toda Colombia y en el
+                        exterior. Las reuniones son por videollamada.
+                    </p>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================
+     QUÉ PASA DESPUÉS
+     ================================ -->
+
+<section class="proceso-contacto">
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+            <div class="section-eyebrow">
+                <span></span>
+                QUÉ PASA DESPUÉS
+            </div>
+
+            <h2>
+                Del mensaje a la
+                <span>primera línea de código.</span>
+            </h2>
+
+            <p>
+                Sin procesos eternos ni reuniones de relleno.
+                Así avanzamos desde que nos escribes.
+            </p>
+        </div>
+
+        <div class="pasos">
+
+            <article class="paso reveal">
+                <div class="paso-numero">01</div>
+                <h3>Te respondemos</h3>
+                <p>
+                    Leemos tu mensaje y te contestamos en menos de
+                    24 horas hábiles con una primera lectura de lo
+                    que nos planteas.
+                </p>
+                <span class="paso-tiempo">24 horas</span>
+            </article>
+
+            <article class="paso reveal">
+                <div class="paso-numero">02</div>
+                <h3>Conversamos</h3>
+                <p>
+                    Videollamada de 30 minutos para entender el
+                    negocio, aterrizar el alcance y despejar dudas.
+                    Sin costo.
+                </p>
+                <span class="paso-tiempo">30 minutos</span>
+            </article>
+
+            <article class="paso reveal">
+                <div class="paso-numero">03</div>
+                <h3>Recibes la propuesta</h3>
+                <p>
+                    Te enviamos alcance, plazos y precio cerrado por
+                    escrito. Si te convence, arrancamos.
+                </p>
+                <span class="paso-tiempo">2 - 3 días</span>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================
+     PREGUNTAS FRECUENTES
+     ================================ -->
+
+<section class="faq">
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+            <div class="section-eyebrow">
+                <span></span>
+                DUDAS HABITUALES
+            </div>
+
+            <h2>
+                Antes de escribirnos,
+                <span>quizá esto ayude.</span>
+            </h2>
+        </div>
+
+        <div class="faq-lista">
+
+            <details class="faq-item reveal">
+                <summary>
+                    ¿Cuánto cuesta una página web?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <p>
+                    Depende del alcance. Una landing page bien hecha no
+                    cuesta lo mismo que una tienda con pasarela de pagos
+                    o un sistema de gestión. Por eso damos precio cerrado
+                    después de entender qué necesitas, nunca antes.
+                </p>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>
+                    ¿Cuánto tarda el desarrollo?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <p>
+                    Una web corporativa suele tomar de 3 a 5 semanas.
+                    Una tienda online, entre 5 y 8. Los sistemas a medida
+                    se definen por fases, con entregas parciales para que
+                    veas avances desde la primera semana.
+                </p>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>
+                    ¿Trabajan con negocios fuera de Nariño?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <p>
+                    Sí. Trabajamos en remoto con clientes de toda Colombia
+                    y del exterior. Todo el proceso se lleva por
+                    videollamada y mensajería, con entregas documentadas.
+                </p>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>
+                    ¿Qué pasa después de entregar el proyecto?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <p>
+                    Incluimos acompañamiento tras la entrega para resolver
+                    ajustes y dudas. Si quieres que sigamos manteniendo o
+                    evolucionando el proyecto, lo acordamos aparte.
+                </p>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>
+                    ¿El sitio queda a mi nombre?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <p>
+                    Sí. El dominio, el hosting y el código quedan a tu
+                    nombre. No secuestramos proyectos: si algún día
+                    decides irte, te llevas todo.
+                </p>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================
+     CTA FINAL
+     ================================ -->
+
+<section class="cta-final">
+    <div class="cta-glow"></div>
+
+    <div class="section-container">
+        <div class="cta-content reveal">
+
+            <h2>
+                Tu competencia ya está online.
+                <span>Hagamos que no se note.</span>
+            </h2>
+
+            <p>
+                Cada semana sin presencia digital es un cliente que
+                encuentra a otro. Empecemos hoy.
+            </p>
+
+            <div class="cta-actions">
+                <a routerLink="/proyectos" class="btn btn-primary">
+                    Ver nuestros proyectos
+                    <span>↗</span>
+                </a>
+
+                <a routerLink="/servicios" class="btn btn-secondary">
+                    Explorar servicios
+                    <span>→</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
