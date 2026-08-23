@@ -8,42 +8,43 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-jAzrg_92.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-BraGsK46.js",
+      "chunk-B4IxlEPh.js",
+      "chunk-CP1xFpYB.js"
     ],
     "route": "/"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-CrMSMc3T.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-g3dV-phx.js",
+      "chunk-B4IxlEPh.js",
+      "chunk-CP1xFpYB.js"
     ],
     "route": "/servicios"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-C_Qi_f6_.js",
-      "chunk-Boe8W-8V.js"
+      "chunk-N3Rt8YkZ.js",
+      "chunk-B4IxlEPh.js",
+      "chunk-CP1xFpYB.js"
     ],
     "route": "/proyectos"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-BwmsQkNQ.js",
-      "chunk-Boe8W-8V.js",
-      "chunk-gXWSgGua.js"
+      "chunk-CuWj16Ra.js",
+      "chunk-B4IxlEPh.js"
     ],
     "route": "/nosotros"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-dThVd8DC.js",
-      "chunk-Boe8W-8V.js",
-      "chunk-gXWSgGua.js"
+      "chunk-Cf48CGy7.js",
+      "chunk-B4IxlEPh.js"
     ],
     "route": "/contacto"
   },
@@ -55,13 +56,13 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 9733, hash: 'fb5cf8b9b2f3de8230d9acba68e46702acce576958f958ea9544d9b8ed0306da', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 946, hash: '454610ffe5f9a3d6fbd71768d9c4f89921598731cacbacc505361ccc03d820cb', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 61573, hash: '6b6e5ae6681e9a684affb9b828b71aadbb33d74be342c62fad3f10f33031c892', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'proyectos/index.html': {size: 42496, hash: '82475934b4ddfa41c69485a80ad6022b4dbaecdb18eb3b407ef55753e81a56c1', text: () => import('./assets-chunks/proyectos_index_html.mjs').then(m => m.default)},
-    'servicios/index.html': {size: 59398, hash: 'fef0726ce7e2f704a64b8a6037e9bb3c36bb099e19b19ca54cd288eb3f3cfd79', text: () => import('./assets-chunks/servicios_index_html.mjs').then(m => m.default)},
-    'nosotros/index.html': {size: 54820, hash: '0b15c94278bbad48c6e3f9505d262fc65bdc17e2062babd7aa9b78efcd4a8166', text: () => import('./assets-chunks/nosotros_index_html.mjs').then(m => m.default)},
-    'contacto/index.html': {size: 56761, hash: '1092630f9d06250bca88f52d41d4b52b88049883694c27cd46b2691b7038d432', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
-    'styles-KQCL5Y2V.css': {size: 9369, hash: 'Y/UbTP4DwpM', text: () => import('./assets-chunks/styles-KQCL5Y2V_css.mjs').then(m => m.default)}
+    'index.csr.html': {size: 10091, hash: '439187fc2fdee31f2490e948ea99df48ed99e575af9a891efc46be8b45109f31', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1086, hash: '0e039991f097ad0a9f05b3179dfc1b08b5910eeddafde3eb0981b7d5f1b46e42', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'proyectos/index.html': {size: 46135, hash: '84d2d6eba56acd73e6a568d05299e571979922c15373567358d6394526f37f28', text: () => import('./assets-chunks/proyectos_index_html.mjs').then(m => m.default)},
+    'servicios/index.html': {size: 61653, hash: 'f64fe9f411d99ce2cefcaf1df630daedf234fc39e4cbb970faf4ab68ec50748a', text: () => import('./assets-chunks/servicios_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 65279, hash: '43645627e7b4cc52b9f18d295c7ee786274a189c748df3d72f89225bcd74c565', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'nosotros/index.html': {size: 68651, hash: '53e741e4d4971c658a3035bfbd3f61f1586cf862720f3471ca17cfb644b86050', text: () => import('./assets-chunks/nosotros_index_html.mjs').then(m => m.default)},
+    'contacto/index.html': {size: 60118, hash: '8891f79287987ff102ca1b7799a333cf08903bde0e0326a85b5b2830564fce65', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
+    'styles-POBN6KK7.css': {size: 9678, hash: '3eps8QgpuF0', text: () => import('./assets-chunks/styles-POBN6KK7_css.mjs').then(m => m.default)}
   },
 };

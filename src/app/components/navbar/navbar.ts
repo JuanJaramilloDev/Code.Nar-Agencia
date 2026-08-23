@@ -35,6 +35,7 @@ export class NavbarComponent {
     { ruta: '/servicios', texto: 'Servicios', exacto: false },
     { ruta: '/proyectos', texto: 'Proyectos', exacto: false },
     { ruta: '/nosotros', texto: 'Nosotros', exacto: false },
+    { ruta: '/contacto', texto: 'Contacto', exacto: false },
   ];
 
   constructor() {

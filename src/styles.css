@@ -60,6 +60,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 
@@ -90,6 +91,7 @@ a {
 
 button {
   border: 0;
+  cursor: pointer;
 }
 
 
@@ -102,4 +104,20 @@ img {
 ::selection {
   background: var(--color-gold);
   color: var(--color-black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
 }

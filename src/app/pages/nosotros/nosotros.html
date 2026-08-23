@@ -15,8 +15,8 @@
             </div>
 
             <h1>
-                Cinco personas
-                <span>obsesionadas con que funcione.</span>
+                Un equipo
+                <span>obsesionado con que funcione.</span>
             </h1>
 
             <p class="hero-nosotros-description">
@@ -80,8 +80,7 @@
                 </p>
 
                 <p>
-                    Code.Nar surge de juntar a cinco personas que ya
-                    trabajaban por separado en desarrollo, diseño y
+                    Code.Nar surge de reunir talento de desarrollo, diseño y
                     producto, con una idea simple: construir cada proyecto
                     como si fuera nuestro, entregarlo completo y dejar al
                     cliente con el control de lo que pagó.
@@ -218,12 +217,12 @@
             </div>
 
             <h2>
-                Cinco disciplinas,
-                <span>un solo proyecto.</span>
+                Varias disciplinas,
+                <span>un solo equipo.</span>
             </h2>
 
             <p>
-                Cada proyecto pasa por las cinco. No entregamos nada que
+                Cada proyecto pasa por las disciplinas necesarias. No entregamos nada que
                 no haya sido diseñado, construido, revisado y probado.
             </p>
         </div>
@@ -245,6 +244,35 @@
             }
 
         </div>
+
+        <section class="equipo-directorio reveal" aria-labelledby="directorio-titulo">
+            <div class="equipo-directorio-intro">
+                <div>
+                    <span class="equipo-directorio-etiqueta">NUESTRO EQUIPO</span>
+                    <h3 id="directorio-titulo">Personas y especialidades.</h3>
+                </div>
+                <p>Conoce el área responsable de cada parte del proyecto y sus canales profesionales.</p>
+            </div>
+
+            <div class="equipo-directorio-lista">
+                @for (miembro of equipo; track miembro.rol) {
+                <div class="equipo-directorio-fila">
+                    <strong>{{ miembro.nombre }}</strong>
+                    <span>{{ miembro.foco }}</span>
+                    <div class="equipo-directorio-redes" aria-label="Redes profesionales">
+                        <a [href]="miembro.linkedin" target="_blank" rel="noopener noreferrer"
+                            [attr.aria-label]="'LinkedIn de ' + miembro.nombre" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5A1.7 1.7 0 1 1 5.2 7a1.7 1.7 0 0 1 0-3.5ZM3.7 8.4h3V20h-3V8.4Zm4.9 0h2.9V10h.1c.4-.8 1.4-1.9 3-1.9 3.2 0 3.8 2.1 3.8 4.9v7h-3v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V20h-3V8.4Z" /></svg>
+                        </a>
+                        <a [href]="miembro.github" target="_blank" rel="noopener noreferrer"
+                            [attr.aria-label]="'GitHub de ' + miembro.nombre" title="GitHub">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.7-1.3-2.2-.2-4.5-1.1-4.5-4.9 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.5 4.9.4.3.7.9.7 1.8V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.5Z" /></svg>
+                        </a>
+                    </div>
+                </div>
+                }
+            </div>
+        </section>
 
     </div>
 </section>

@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { Seo } from '../../services/seo';
+import { initScrollAnimations } from '../../services/scroll-animations';
 
 @Component({
   selector: 'app-servicios',
@@ -12,6 +13,8 @@ export class Servicios {
   openService: string | null = null;
 
   private readonly seo = inject(Seo);
+  private readonly host = inject(ElementRef<HTMLElement>);
+  private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
 
@@ -26,6 +29,10 @@ export class Servicios {
       canonical: '/servicios',
 
     });
+
+    afterNextRender(() =>
+      initScrollAnimations(this.host, this.destroyRef, '.services-hero'),
+    );
   }
 
   toggleService(serviceId: string): void {

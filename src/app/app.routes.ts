@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    title: 'CodeNari | Desarrollo Web y Soluciones Digitales',
+    title: 'Code.Nar | Desarrollo web y soluciones digitales en Colombia',
     loadComponent: () =>
       import('./pages/home/home').then(
         (m) => m.Home
@@ -12,7 +12,7 @@ export const routes: Routes = [
 
   {
     path: 'servicios',
-    title: 'Servicios de Desarrollo Web | CodeNari',
+    title: 'Servicios de desarrollo web y soluciones digitales | Code.Nar',
     loadComponent: () =>
       import('./pages/servicios/servicios').then(
         (m) => m.Servicios
@@ -21,7 +21,7 @@ export const routes: Routes = [
 
   {
     path: 'proyectos',
-    title: 'Proyectos y Casos de Éxito | CodeNari',
+    title: 'Proyectos de desarrollo web y sistemas | Code.Nar',
     loadComponent: () =>
       import('./pages/proyectos/proyectos').then(
         (m) => m.Proyectos
@@ -30,7 +30,7 @@ export const routes: Routes = [
 
   {
     path: 'nosotros',
-    title: 'Nosotros | CodeNari',
+    title: 'Nuestro equipo de desarrollo web | Code.Nar',
     loadComponent: () =>
       import('./pages/nosotros/nosotros').then(
         (m) => m.Nosotros
@@ -39,7 +39,7 @@ export const routes: Routes = [
 
   {
     path: 'contacto',
-    title: 'Contacto | CodeNari',
+    title: 'Contacto para tu proyecto digital | Code.Nar',
     loadComponent: () =>
       import('./pages/contacto/contacto').then(
         (m) => m.Contacto

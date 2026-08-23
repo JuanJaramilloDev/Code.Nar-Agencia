@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { Seo } from '../../services/seo';
+import { initScrollAnimations } from '../../services/scroll-animations';
 
 @Component({
   selector: 'app-proyectos',
@@ -10,6 +11,8 @@ import { Seo } from '../../services/seo';
 export class Proyectos {
 
   private readonly seo = inject(Seo);
+  private readonly host = inject(ElementRef<HTMLElement>);
+  private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
 
@@ -24,6 +27,10 @@ export class Proyectos {
       canonical: '/proyectos',
 
     });
+
+    afterNextRender(() =>
+      initScrollAnimations(this.host, this.destroyRef, '.projects-hero'),
+    );
   }
 
   proyectos = [
@@ -39,7 +46,8 @@ export class Proyectos {
         'TypeScript'
       ],
       imagen: '/images/reyinmobiliaria.png',
-      url: 'https://reyinmobiliaria.com'
+      url: 'https://reyinmobiliaria.com',
+      externo: true,
     },
 
     {
@@ -54,7 +62,8 @@ export class Proyectos {
         'Supabase'
       ],
       imagen: '/images/av21bar.png',
-      url: 'https://www.av-21bar.com'
+      url: 'https://www.av-21bar.com',
+      externo: true,
     },
 
     {
@@ -69,7 +78,8 @@ export class Proyectos {
         'LocalStorage'
       ],
       imagen: '/images/quemini.png',
-      url: 'https://quemini.vercel.app'
+      url: 'https://quemini.vercel.app',
+      externo: true,
     },
 
     {
@@ -84,7 +94,8 @@ export class Proyectos {
         'CSS'
       ],
       imagen: '/images/proyecto-corporativo.png',
-      url: '#'
+      url: '/contacto',
+      externo: false,
     },
 
     {
@@ -99,7 +110,8 @@ export class Proyectos {
         'CSS'
       ],
       imagen: '/images/marca-personal.png',
-      url: '#'
+      url: '/contacto',
+      externo: false,
     },
 
     {
@@ -114,7 +126,8 @@ export class Proyectos {
         'MySQL'
       ],
       imagen: '/images/proyecto-personalizado.png',
-      url: '#'
+      url: '/contacto',
+      externo: false,
     }
   ];
 }
