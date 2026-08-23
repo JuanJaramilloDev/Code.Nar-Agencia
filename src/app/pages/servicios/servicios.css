@@ -728,3 +728,122 @@
     }
 
 }
+
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+@media (hover: none) {
+
+    .overview-card:hover,
+    .service-cta:hover,
+    .cta-button:hover {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    /* 10px no es legible en un teléfono. */
+    .overview-card p {
+        font-size: 12.5px;
+        line-height: 1.6;
+    }
+
+    .overview-header p,
+    .services-hero p {
+        font-size: 14px;
+    }
+
+    /* El hero arrancaba casi pegado a la barra fija. */
+    .services-hero {
+        padding-top: 120px;
+    }
+}
+
+
+/* Una sola columna: a 360px dos tarjetas quedan ilegibles. */
+@media (max-width: 460px) {
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .overview-card {
+        min-height: 0;
+        padding: 22px 20px;
+    }
+
+    .overview-card h3 {
+        font-size: 19px;
+    }
+
+    .overview-card p {
+        font-size: 13px;
+    }
+
+    .service-title {
+        letter-spacing: -1px;
+    }
+}
+
+
+/* ================================
+   TARJETAS DE RESUMEN EXPANDIBLES
+   ================================ */
+
+/*
+ * La tarjeta dejó de ser un <a> envolvente: el enlace vive ahora
+ * dentro del detalle, así que recuperamos el cursor y el foco.
+ */
+.overview-card {
+    cursor: default;
+}
+
+.overview-card .overview-card-top {
+    align-items: center;
+}
+
+.overview-card .exp-detalle > div {
+    padding-top: 12px;
+}
+
+.overview-card .exp-detalle p {
+    margin: 0;
+}
+
+.overview-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--color-gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity var(--transition);
+}
+
+.overview-link:hover {
+    opacity: 0.75;
+}
+
+.overview-link:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* Plegadas ya no necesitan reservar alto. */
+.overview-card {
+    min-height: 0;
+}
+
+@media (max-width: 650px) {
+
+    .overview-card {
+        min-height: 0;
+    }
+}

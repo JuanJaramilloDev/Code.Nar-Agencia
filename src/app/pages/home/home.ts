@@ -1,12 +1,13 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Expandible } from '../../directives/expandible';
 import { Seo } from '../../services/seo';
 import { initScrollAnimations } from '../../services/scroll-animations';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, Expandible],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

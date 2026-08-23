@@ -327,36 +327,61 @@
 
         <div class="pasos">
 
-            <article class="paso reveal">
+            <article class="paso reveal exp" appExpandible #expPaso01="expandible">
                 <div class="paso-numero">01</div>
                 <h3>Te respondemos</h3>
-                <p>
-                    Leemos tu mensaje y te contestamos en menos de
-                    24 horas hábiles con una primera lectura de lo
-                    que nos planteas.
-                </p>
+
+                <div class="exp-detalle" id="paso-01">
+                    <div>
+                        <p>Leemos tu mensaje y te contestamos en menos de 24 horas hábiles con una primera lectura de lo que nos planteas.</p>
+                    </div>
+                </div>
+
                 <span class="paso-tiempo">24 horas</span>
+
+                <button type="button" class="exp-toggle" (click)="expPaso01.alternar()"
+                    [attr.aria-expanded]="expPaso01.abierta()" aria-controls="paso-01"
+                    [attr.aria-label]="expPaso01.abierta() ? 'Ocultar detalle del paso 01' : 'Ver detalle del paso 01'">
+                    +
+                </button>
             </article>
 
-            <article class="paso reveal">
+            <article class="paso reveal exp" appExpandible #expPaso02="expandible">
                 <div class="paso-numero">02</div>
                 <h3>Conversamos</h3>
-                <p>
-                    Videollamada de 30 minutos para entender el
-                    negocio, aterrizar el alcance y despejar dudas.
-                    Sin costo.
-                </p>
+
+                <div class="exp-detalle" id="paso-02">
+                    <div>
+                        <p>Videollamada de 30 minutos para entender el negocio, aterrizar el alcance y despejar dudas. Sin costo.</p>
+                    </div>
+                </div>
+
                 <span class="paso-tiempo">30 minutos</span>
+
+                <button type="button" class="exp-toggle" (click)="expPaso02.alternar()"
+                    [attr.aria-expanded]="expPaso02.abierta()" aria-controls="paso-02"
+                    [attr.aria-label]="expPaso02.abierta() ? 'Ocultar detalle del paso 02' : 'Ver detalle del paso 02'">
+                    +
+                </button>
             </article>
 
-            <article class="paso reveal">
+            <article class="paso reveal exp" appExpandible #expPaso03="expandible">
                 <div class="paso-numero">03</div>
                 <h3>Recibes la propuesta</h3>
-                <p>
-                    Te enviamos alcance, plazos y precio cerrado por
-                    escrito. Si te convence, arrancamos.
-                </p>
+
+                <div class="exp-detalle" id="paso-03">
+                    <div>
+                        <p>Te enviamos alcance, plazos y precio cerrado por escrito. Si te convence, arrancamos.</p>
+                    </div>
+                </div>
+
                 <span class="paso-tiempo">2 - 3 días</span>
+
+                <button type="button" class="exp-toggle" (click)="expPaso03.alternar()"
+                    [attr.aria-expanded]="expPaso03.abierta()" aria-controls="paso-03"
+                    [attr.aria-label]="expPaso03.abierta() ? 'Ocultar detalle del paso 03' : 'Ver detalle del paso 03'">
+                    +
+                </button>
             </article>
 
         </div>
