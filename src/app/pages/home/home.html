@@ -2,24 +2,24 @@
 
     <div class="hero-container">
         <div class="hero-content">
-            <div class="eyebrow">
+
+            <div class="eyebrow hero-reveal">
                 <span class="eyebrow-dot"></span>
                 DESARROLLO DIGITAL · COLOMBIA
             </div>
 
-            <h1>
-                Construimos
-                <span>experiencias digitales</span>
-                que hacen crecer negocios.
+            <h1 class="hero-reveal">
+                Diseño, desarrollo y estrategia digital
+                <span>para negocios que quieren crecer.</span>
             </h1>
 
-            <p class="hero-description">
-                Diseñamos y desarrollamos páginas web, tiendas online
-                y soluciones digitales modernas para empresas,
-                emprendimientos y profesionales.
+            <p class="hero-description hero-reveal">
+                Somos Code.Nar: un equipo de diseño y desarrollo web que crea
+                sitios, tiendas online y sistemas a medida claros, rápidos y
+                enfocados en los objetivos de tu negocio.
             </p>
 
-            <div class="hero-actions">
+            <div class="hero-actions hero-reveal">
                 <a routerLink="/contacto" class="btn btn-primary">
                     Hablemos de tu proyecto
                     <span>↗</span>
@@ -31,10 +31,11 @@
                 </a>
             </div>
 
-            <div class="hero-stats">
+            <div class="hero-stats hero-reveal" aria-label="Características de Code.Nar">
+
                 <div class="stat">
-                    <strong>5</strong>
-                    <span>Fundadores</span>
+                    <strong>Equipo</strong>
+                    <span>Multidisciplinario</span>
                 </div>
 
                 <div class="stat">
@@ -46,19 +47,23 @@
                     <strong>CO</strong>
                     <span>Colombia</span>
                 </div>
+
             </div>
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual hero-reveal">
+
             <div class="visual-glow"></div>
 
             <div class="visual-card">
+
                 <div class="visual-card-top">
                     <span>NARICODE</span>
                     <span>20 / 08</span>
                 </div>
 
                 <div class="visual-content">
+
                     <span class="visual-label">
                         EXPERIENCIA DIGITAL
                     </span>
@@ -72,12 +77,14 @@
                     </h2>
 
                     <div class="visual-line"></div>
+
                 </div>
 
                 <div class="visual-card-bottom">
                     <span>DESARROLLO WEB</span>
                     <span>2026</span>
                 </div>
+
             </div>
 
             <div class="floating-card">
@@ -88,6 +95,7 @@
                     <small>Digitales</small>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -95,13 +103,16 @@
         <span></span>
         DESPLÁZATE PARA EXPLORAR
     </div>
+
 </section>
 
 
 <section id="servicios" class="services-section">
+
     <div class="section-container">
 
-        <div class="section-heading">
+        <div class="section-heading reveal">
+
             <div class="section-eyebrow">
                 <span></span>
                 LO QUE HACEMOS
@@ -117,11 +128,14 @@
                 productos digitales modernos, funcionales y
                 pensados para generar resultados.
             </p>
+
         </div>
+
 
         <div class="services-grid">
 
             <article class="service-card exp" appExpandible #exp01="expandible">
+
                 <div class="service-number">01</div>
 
                 <a routerLink="/servicios" fragment="desarrollo-web" class="service-icon"
@@ -133,23 +147,31 @@
 
                 <div class="exp-detalle" id="detalle-desarrollo-web">
                     <div>
-                        <p>Sitios web modernos, rápidos y adaptados a las necesidades de cada empresa o proyecto.</p>
+
+                        <p>
+                            Sitios web modernos, rápidos y adaptados a las
+                            necesidades de cada empresa o proyecto.
+                        </p>
 
                         <a routerLink="/servicios" fragment="desarrollo-web" class="service-link">
                             Explorar servicio →
                         </a>
+
                     </div>
                 </div>
 
                 <button type="button" class="exp-toggle" (click)="exp01.alternar()"
-                    [attr.aria-expanded]="exp01.abierta()" aria-controls="detalle-desarrollo-web"
-                    [attr.aria-label]="exp01.abierta() ? 'Ocultar detalle de Desarrollo Web' : 'Ver detalle de Desarrollo Web'">
+                    [attr.aria-expanded]="exp01.abierta()" aria-controls="detalle-desarrollo-web" [attr.aria-label]="exp01.abierta()
+                        ? 'Ocultar detalle de Desarrollo Web'
+                        : 'Ver detalle de Desarrollo Web'">
                     +
                 </button>
+
             </article>
 
 
             <article class="service-card exp" appExpandible #exp02="expandible">
+
                 <div class="service-number">02</div>
 
                 <a routerLink="/servicios" fragment="tiendas-online" class="service-icon"
@@ -161,23 +183,32 @@
 
                 <div class="exp-detalle" id="detalle-tiendas-online">
                     <div>
-                        <p>Tiendas digitales diseñadas para vender productos, gestionar pedidos y ofrecer una experiencia de compra profesional.</p>
+
+                        <p>
+                            Tiendas digitales diseñadas para vender productos,
+                            gestionar pedidos y ofrecer una experiencia de
+                            compra profesional.
+                        </p>
 
                         <a routerLink="/servicios" fragment="tiendas-online" class="service-link">
                             Explorar servicio →
                         </a>
+
                     </div>
                 </div>
 
                 <button type="button" class="exp-toggle" (click)="exp02.alternar()"
-                    [attr.aria-expanded]="exp02.abierta()" aria-controls="detalle-tiendas-online"
-                    [attr.aria-label]="exp02.abierta() ? 'Ocultar detalle de Tiendas Online' : 'Ver detalle de Tiendas Online'">
+                    [attr.aria-expanded]="exp02.abierta()" aria-controls="detalle-tiendas-online" [attr.aria-label]="exp02.abierta()
+                        ? 'Ocultar detalle de Tiendas Online'
+                        : 'Ver detalle de Tiendas Online'">
                     +
                 </button>
+
             </article>
 
 
             <article class="service-card exp" appExpandible #exp03="expandible">
+
                 <div class="service-number">03</div>
 
                 <a routerLink="/servicios" fragment="sistemas-web" class="service-icon"
@@ -189,23 +220,32 @@
 
                 <div class="exp-detalle" id="detalle-sistemas-web">
                     <div>
-                        <p>Plataformas y sistemas personalizados para automatizar procesos y mejorar la operación de los negocios.</p>
+
+                        <p>
+                            Plataformas y sistemas personalizados para
+                            automatizar procesos y mejorar la operación
+                            de los negocios.
+                        </p>
 
                         <a routerLink="/servicios" fragment="sistemas-web" class="service-link">
                             Explorar servicio →
                         </a>
+
                     </div>
                 </div>
 
                 <button type="button" class="exp-toggle" (click)="exp03.alternar()"
-                    [attr.aria-expanded]="exp03.abierta()" aria-controls="detalle-sistemas-web"
-                    [attr.aria-label]="exp03.abierta() ? 'Ocultar detalle de Sistemas Web' : 'Ver detalle de Sistemas Web'">
+                    [attr.aria-expanded]="exp03.abierta()" aria-controls="detalle-sistemas-web" [attr.aria-label]="exp03.abierta()
+                        ? 'Ocultar detalle de Sistemas Web'
+                        : 'Ver detalle de Sistemas Web'">
                     +
                 </button>
+
             </article>
 
 
             <article class="service-card exp" appExpandible #exp04="expandible">
+
                 <div class="service-number">04</div>
 
                 <a routerLink="/servicios" fragment="soluciones-digitales" class="service-icon"
@@ -217,31 +257,43 @@
 
                 <div class="exp-detalle" id="detalle-soluciones-digitales">
                     <div>
-                        <p>Integraciones, automatizaciones y herramientas digitales construidas alrededor de cada necesidad.</p>
+
+                        <p>
+                            Integraciones, automatizaciones y herramientas
+                            digitales construidas alrededor de cada necesidad.
+                        </p>
 
                         <a routerLink="/servicios" fragment="soluciones-digitales" class="service-link">
                             Explorar servicio →
                         </a>
+
                     </div>
                 </div>
 
                 <button type="button" class="exp-toggle" (click)="exp04.alternar()"
                     [attr.aria-expanded]="exp04.abierta()" aria-controls="detalle-soluciones-digitales"
-                    [attr.aria-label]="exp04.abierta() ? 'Ocultar detalle de Soluciones Digitales' : 'Ver detalle de Soluciones Digitales'">
+                    [attr.aria-label]="exp04.abierta()
+                        ? 'Ocultar detalle de Soluciones Digitales'
+                        : 'Ver detalle de Soluciones Digitales'">
                     +
                 </button>
+
             </article>
 
         </div>
+
     </div>
+
 </section>
 
 
 <section id="proyectos" class="projects-section">
+
     <div class="section-container">
 
         <div class="projects-header">
-            <div class="section-heading">
+
+            <div class="section-heading reveal">
 
                 <div class="section-eyebrow">
                     <span></span>
@@ -264,14 +316,16 @@
             <span class="projects-count">
                 02 / DESTACADOS
             </span>
+
         </div>
 
 
         <div class="projects-list">
 
-            <article class="project-card">
+            <article class="project-card reveal">
 
                 <div class="project-image">
+
                     <div class="project-placeholder">
 
                         <span>01</span>
@@ -286,6 +340,7 @@
                         </small>
 
                     </div>
+
                 </div>
 
 
@@ -321,9 +376,10 @@
             </article>
 
 
-            <article class="project-card project-card-reverse">
+            <article class="project-card project-card-reverse reveal">
 
                 <div class="project-image">
+
                     <div class="project-placeholder">
 
                         <span>02</span>
@@ -338,6 +394,7 @@
                         </small>
 
                     </div>
+
                 </div>
 
 
@@ -374,7 +431,8 @@
         </div>
 
 
-        <div class="projects-more">
+        <div class="projects-more reveal">
+
             <a routerLink="/proyectos" class="projects-more-button">
                 <span>Ver todos los proyectos</span>
 
@@ -382,7 +440,9 @@
                     ↗
                 </span>
             </a>
+
         </div>
 
     </div>
+
 </section>

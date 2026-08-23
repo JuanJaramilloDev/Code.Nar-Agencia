@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Expandible } from '../../directives/expandible';
 import { Seo } from '../../services/seo';
+import { initScrollAnimations } from '../../services/scroll-animations';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,8 @@ import { Seo } from '../../services/seo';
 export class Home {
 
   private readonly seo = inject(Seo);
+  private readonly host = inject(ElementRef<HTMLElement>);
+  private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
 
@@ -26,5 +29,9 @@ export class Home {
       canonical: '/',
 
     });
+
+    afterNextRender(() =>
+      initScrollAnimations(this.host, this.destroyRef, '.hero', '.visual-glow'),
+    );
   }
 }

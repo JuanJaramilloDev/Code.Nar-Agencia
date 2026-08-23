@@ -37,7 +37,7 @@ export class Nosotros {
    */
 
   readonly metricas = [
-    { valor: '5', etiqueta: 'Fundadores', detalle: 'Un equipo, no una bolsa de freelancers' },
+    { valor: '1', etiqueta: 'Equipo unido', detalle: 'Un grupo, no una bolsa de freelancers' },
     { valor: '6+', etiqueta: 'Proyectos entregados', detalle: 'De landing pages a sistemas de gestión' },
     { valor: '100%', etiqueta: 'Código propio', detalle: 'Nada de plantillas recicladas' },
     { valor: '24 h', etiqueta: 'Tiempo de respuesta', detalle: 'Días hábiles, sin excepciones' },
@@ -76,43 +76,58 @@ export class Nosotros {
 
   /**
    * Equipo por disciplina.
-   * TODO: reemplazar por los nombres y fotos reales de los 5 fundadores.
+   * TODO: reemplazar por los nombres y fotos reales del equipo.
    */
   readonly equipo = [
     {
       inicial: 'F',
+      nombre: 'Equipo de Frontend',
       rol: 'Frontend',
       foco: 'Interfaces y experiencia',
       texto:
         'Traduce el diseño a interfaces rápidas, accesibles y que se sienten bien en cualquier pantalla.',
+      linkedin: 'https://www.linkedin.com/',
+      github: 'https://github.com/',
     },
     {
       inicial: 'B',
+      nombre: 'Equipo de Backend',
       rol: 'Backend',
       foco: 'Datos y lógica',
       texto:
         'Diseña la base de datos, las integraciones y la lógica que sostiene todo lo que no se ve.',
+      linkedin: 'https://www.linkedin.com/',
+      github: 'https://github.com/',
     },
     {
       inicial: 'D',
+      nombre: 'Equipo de Diseño',
       rol: 'Diseño',
       foco: 'Identidad e interfaz',
       texto:
         'Define la jerarquía visual, el sistema de color y la tipografía antes de que se escriba una línea de código.',
+      linkedin: 'https://www.linkedin.com/',
+      github: 'https://github.com/',
     },
     {
       inicial: 'P',
+      nombre: 'Equipo de Producto',
       rol: 'Producto',
       foco: 'Alcance y prioridades',
       texto:
         'Convierte lo que el negocio necesita en un alcance concreto, con plazos y entregas verificables.',
+      linkedin: 'https://www.linkedin.com/',
+      github: 'https://github.com/',
     },
     {
       inicial: 'Q',
+      nombre: 'Equipo de Calidad',
       rol: 'Calidad',
       foco: 'Pruebas y despliegue',
       texto:
         'Revisa, prueba y despliega. Se asegura de que lo entregado funcione fuera del computador de quien lo hizo.',
+      linkedin: 'https://www.linkedin.com/',
+      github: 'https://github.com/',
     },
   ];
 
@@ -133,7 +148,7 @@ export class Nosotros {
     this.seo.update({
       title: 'Sobre Code.Nar | Desarrollo Web y Soluciones Digitales',
       description:
-        'Conoce al equipo detrás de Code.Nar: cinco fundadores que desarrollan páginas web, tiendas online y sistemas a medida para empresas y emprendimientos en Colombia.',
+        'Conoce al equipo detrás de Code.Nar: especialistas en diseño y desarrollo de páginas web, tiendas online y sistemas a medida para empresas y emprendimientos en Colombia.',
       canonical: '/nosotros',
     });
 

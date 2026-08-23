@@ -102,7 +102,7 @@
 .hero-nosotros {
   position: relative;
   overflow: hidden;
-  padding: 190px 0 90px;
+  padding: 100px 0 90px;
   background: var(--color-black);
 }
 
@@ -585,6 +585,95 @@
   line-height: 1.8;
 }
 
+.equipo-directorio {
+  margin-top: 72px;
+  padding: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-black-soft);
+}
+
+.equipo-directorio-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.equipo-directorio-etiqueta {
+  color: var(--color-gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.equipo-directorio h3 {
+  margin: 10px 0 0;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -1px;
+}
+
+.equipo-directorio-intro p {
+  max-width: 380px;
+  margin: 0;
+  color: var(--color-gray);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.equipo-directorio-lista {
+  border-top: 1px solid var(--color-border);
+}
+
+.equipo-directorio-fila {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1.4fr) auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 72px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.equipo-directorio-fila > strong {
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.equipo-directorio-fila > span {
+  color: var(--color-gray);
+  font-size: 12px;
+}
+
+.equipo-directorio-redes {
+  display: flex;
+  gap: 9px;
+}
+
+.equipo-directorio-redes a {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-gray);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.equipo-directorio-redes svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.equipo-directorio-redes a:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold-soft);
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
 
 /* ================================
    STACK
@@ -817,6 +906,35 @@
 
   .cta-actions .btn {
     width: 100%;
+  }
+
+  .equipo-directorio {
+    margin-top: 48px;
+    padding: 26px 20px;
+  }
+
+  .equipo-directorio-intro {
+    display: block;
+  }
+
+  .equipo-directorio-intro p {
+    margin-top: 14px;
+  }
+
+  .equipo-directorio-fila {
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    min-height: 0;
+    padding: 18px 0;
+  }
+
+  .equipo-directorio-fila > span {
+    grid-column: 1;
+  }
+
+  .equipo-directorio-redes {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 }
 

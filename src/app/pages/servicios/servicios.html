@@ -8,17 +8,17 @@
 
         <section id="inicio" class="services-hero">
 
-            <div class="section-eyebrow">
+            <div class="section-eyebrow hero-reveal">
                 <span></span>
                 NUESTROS SERVICIOS
             </div>
 
-            <h1>
+            <h1 class="hero-reveal">
                 Soluciones digitales
                 <span>para hacer crecer tu negocio.</span>
             </h1>
 
-            <p>
+            <p class="hero-reveal">
                 Diseñamos y desarrollamos experiencias digitales
                 pensadas para resolver necesidades reales de
                 empresas, emprendimientos y profesionales.
@@ -31,7 +31,7 @@
              RESUMEN DE SERVICIOS
              ========================================= -->
 
-        <section class="services-overview">
+        <section class="services-overview reveal">
 
             <div class="overview-header">
 
@@ -54,13 +54,17 @@
                 <article class="overview-card exp" appExpandible #expS01="expandible">
 
                     <div class="overview-card-top">
+
                         <span>01</span>
 
                         <button type="button" class="exp-toggle" (click)="expS01.alternar()"
                             [attr.aria-expanded]="expS01.abierta()" aria-controls="resumen-desarrollo-web"
-                            [attr.aria-label]="expS01.abierta() ? 'Ocultar detalle de Desarrollo Web' : 'Ver detalle de Desarrollo Web'">
+                            [attr.aria-label]="expS01.abierta()
+                                ? 'Ocultar detalle de Desarrollo Web'
+                                : 'Ver detalle de Desarrollo Web'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -74,13 +78,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-desarrollo-web">
+
                             <div>
-                                <p>Sitios web modernos, rápidos y profesionales para representar tu negocio.</p>
+
+                                <p>
+                                    Sitios web modernos, rápidos y
+                                    profesionales para representar tu negocio.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="desarrollo-web" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -93,13 +104,17 @@
                 <article class="overview-card exp" appExpandible #expS02="expandible">
 
                     <div class="overview-card-top">
+
                         <span>02</span>
 
                         <button type="button" class="exp-toggle" (click)="expS02.alternar()"
                             [attr.aria-expanded]="expS02.abierta()" aria-controls="resumen-tiendas-online"
-                            [attr.aria-label]="expS02.abierta() ? 'Ocultar detalle de Tiendas Online' : 'Ver detalle de Tiendas Online'">
+                            [attr.aria-label]="expS02.abierta()
+                                ? 'Ocultar detalle de Tiendas Online'
+                                : 'Ver detalle de Tiendas Online'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -113,13 +128,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-tiendas-online">
+
                             <div>
-                                <p>E-commerce diseñados para vender productos y facilitar la gestión de pedidos.</p>
+
+                                <p>
+                                    E-commerce diseñados para vender productos
+                                    y facilitar la gestión de pedidos.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="tiendas-online" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -132,13 +154,17 @@
                 <article class="overview-card exp" appExpandible #expS03="expandible">
 
                     <div class="overview-card-top">
+
                         <span>03</span>
 
                         <button type="button" class="exp-toggle" (click)="expS03.alternar()"
                             [attr.aria-expanded]="expS03.abierta()" aria-controls="resumen-sistemas-web"
-                            [attr.aria-label]="expS03.abierta() ? 'Ocultar detalle de Sistemas Web' : 'Ver detalle de Sistemas Web'">
+                            [attr.aria-label]="expS03.abierta()
+                                ? 'Ocultar detalle de Sistemas Web'
+                                : 'Ver detalle de Sistemas Web'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -152,13 +178,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-sistemas-web">
+
                             <div>
-                                <p>Plataformas y herramientas digitales para optimizar procesos.</p>
+
+                                <p>
+                                    Plataformas y herramientas digitales
+                                    para optimizar procesos.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="sistemas-web" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -171,13 +204,17 @@
                 <article class="overview-card exp" appExpandible #expS04="expandible">
 
                     <div class="overview-card-top">
+
                         <span>04</span>
 
                         <button type="button" class="exp-toggle" (click)="expS04.alternar()"
                             [attr.aria-expanded]="expS04.abierta()" aria-controls="resumen-soluciones-digitales"
-                            [attr.aria-label]="expS04.abierta() ? 'Ocultar detalle de Soluciones Digitales' : 'Ver detalle de Soluciones Digitales'">
+                            [attr.aria-label]="expS04.abierta()
+                                ? 'Ocultar detalle de Soluciones Digitales'
+                                : 'Ver detalle de Soluciones Digitales'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -191,13 +228,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-soluciones-digitales">
+
                             <div>
-                                <p>Automatizaciones, APIs e integraciones adaptadas a cada negocio.</p>
+
+                                <p>
+                                    Automatizaciones, APIs e integraciones
+                                    adaptadas a cada negocio.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="soluciones-digitales" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -210,13 +254,17 @@
                 <article class="overview-card exp" appExpandible #expS05="expandible">
 
                     <div class="overview-card-top">
+
                         <span>05</span>
 
                         <button type="button" class="exp-toggle" (click)="expS05.alternar()"
                             [attr.aria-expanded]="expS05.abierta()" aria-controls="resumen-landing-pages"
-                            [attr.aria-label]="expS05.abierta() ? 'Ocultar detalle de Landing Pages' : 'Ver detalle de Landing Pages'">
+                            [attr.aria-label]="expS05.abierta()
+                                ? 'Ocultar detalle de Landing Pages'
+                                : 'Ver detalle de Landing Pages'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -230,13 +278,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-landing-pages">
+
                             <div>
-                                <p>Páginas enfocadas en presentar productos, servicios y generar conversiones.</p>
+
+                                <p>
+                                    Páginas enfocadas en presentar productos,
+                                    servicios y generar conversiones.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="landing-pages" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -249,13 +304,17 @@
                 <article class="overview-card exp" appExpandible #expS06="expandible">
 
                     <div class="overview-card-top">
+
                         <span>06</span>
 
                         <button type="button" class="exp-toggle" (click)="expS06.alternar()"
                             [attr.aria-expanded]="expS06.abierta()" aria-controls="resumen-marketing-digital"
-                            [attr.aria-label]="expS06.abierta() ? 'Ocultar detalle de Marketing Digital' : 'Ver detalle de Marketing Digital'">
+                            [attr.aria-label]="expS06.abierta()
+                                ? 'Ocultar detalle de Marketing Digital'
+                                : 'Ver detalle de Marketing Digital'">
                             +
                         </button>
+
                     </div>
 
                     <div>
@@ -269,13 +328,20 @@
                         </h3>
 
                         <div class="exp-detalle" id="resumen-marketing-digital">
+
                             <div>
-                                <p>Estrategias digitales para aumentar visibilidad, alcance y oportunidades.</p>
+
+                                <p>
+                                    Estrategias digitales para aumentar
+                                    visibilidad, alcance y oportunidades.
+                                </p>
 
                                 <a routerLink="/servicios" fragment="marketing-digital" class="overview-link">
                                     Ver servicio ↗
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -286,7 +352,6 @@
 
 
             <div class="overview-more">
-
                 <span></span>
 
                 <p>
@@ -294,8 +359,8 @@
                 </p>
 
                 <span></span>
-
             </div>
+
 
             <div class="overview-header">
 
@@ -303,7 +368,9 @@
 
                     <h2>
                         Todo lo que necesitas para
-                        <span>llevar tu negocio al mundo digital.</span>
+                        <span>
+                            llevar tu negocio al mundo digital.
+                        </span>
                     </h2>
 
                 </div>
@@ -323,7 +390,7 @@
              DESARROLLO WEB
              ========================================= -->
 
-        <section id="desarrollo-web" class="service-section">
+        <section id="desarrollo-web" class="service-section reveal">
 
             <div class="service-header">
 
@@ -347,11 +414,15 @@
                     [attr.aria-expanded]="openService === 'desarrollo-web'">
 
                     <span>
-                        {{ openService === 'desarrollo-web' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'desarrollo-web'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'desarrollo-web' ? '−' : '+' }}
+                        {{ openService === 'desarrollo-web'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -378,7 +449,7 @@
                             experiencia de usuario y posicionamiento.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Hablemos de tu proyecto
                             <span>↗</span>
                         </a>
@@ -449,7 +520,7 @@
              TIENDAS ONLINE
              ========================================= -->
 
-        <section id="tiendas-online" class="service-section">
+        <section id="tiendas-online" class="service-section reveal">
 
             <div class="service-header">
 
@@ -473,11 +544,15 @@
                     [attr.aria-expanded]="openService === 'tiendas-online'">
 
                     <span>
-                        {{ openService === 'tiendas-online' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'tiendas-online'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'tiendas-online' ? '−' : '+' }}
+                        {{ openService === 'tiendas-online'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -503,7 +578,7 @@
                             centralizada.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Hablemos de tu proyecto
                             <span>↗</span>
                         </a>
@@ -573,7 +648,7 @@
              SISTEMAS WEB
              ========================================= -->
 
-        <section id="sistemas-web" class="service-section">
+        <section id="sistemas-web" class="service-section reveal">
 
             <div class="service-header">
 
@@ -597,11 +672,15 @@
                     [attr.aria-expanded]="openService === 'sistemas-web'">
 
                     <span>
-                        {{ openService === 'sistemas-web' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'sistemas-web'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'sistemas-web' ? '−' : '+' }}
+                        {{ openService === 'sistemas-web'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -627,7 +706,7 @@
                             mejorar la operación.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Hablemos de tu proyecto
                             <span>↗</span>
                         </a>
@@ -699,7 +778,7 @@
              SOLUCIONES DIGITALES
              ========================================= -->
 
-        <section id="soluciones-digitales" class="service-section">
+        <section id="soluciones-digitales" class="service-section reveal">
 
             <div class="service-header">
 
@@ -723,11 +802,15 @@
                     [attr.aria-expanded]="openService === 'soluciones-digitales'">
 
                     <span>
-                        {{ openService === 'soluciones-digitales' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'soluciones-digitales'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'soluciones-digitales' ? '−' : '+' }}
+                        {{ openService === 'soluciones-digitales'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -753,7 +836,7 @@
                             herramientas digitales personalizadas.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Cuéntanos tu idea
                             <span>↗</span>
                         </a>
@@ -825,7 +908,7 @@
              LANDING PAGES
              ========================================= -->
 
-        <section id="landing-pages" class="service-section service-section-featured">
+        <section id="landing-pages" class="service-section service-section-featured reveal">
 
             <div class="service-header">
 
@@ -849,11 +932,15 @@
                     [attr.aria-expanded]="openService === 'landing-pages'">
 
                     <span>
-                        {{ openService === 'landing-pages' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'landing-pages'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'landing-pages' ? '−' : '+' }}
+                        {{ openService === 'landing-pages'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -880,7 +967,7 @@
                             tenga un objetivo concreto.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Diseñemos tu landing
                             <span>↗</span>
                         </a>
@@ -951,7 +1038,7 @@
              MARKETING DIGITAL
              ========================================= -->
 
-        <section id="marketing-digital" class="service-section service-section-featured">
+        <section id="marketing-digital" class="service-section service-section-featured reveal">
 
             <div class="service-header">
 
@@ -975,11 +1062,15 @@
                     [attr.aria-expanded]="openService === 'marketing-digital'">
 
                     <span>
-                        {{ openService === 'marketing-digital' ? 'Ocultar' : 'Ver más' }}
+                        {{ openService === 'marketing-digital'
+                        ? 'Ocultar'
+                        : 'Ver más' }}
                     </span>
 
                     <strong>
-                        {{ openService === 'marketing-digital' ? '−' : '+' }}
+                        {{ openService === 'marketing-digital'
+                        ? '−'
+                        : '+' }}
                     </strong>
 
                 </button>
@@ -1006,7 +1097,7 @@
                             negocio con las personas correctas.
                         </p>
 
-                        <a href="#contacto" class="service-cta">
+                        <a routerLink="/contacto" class="service-cta">
                             Hablemos de crecimiento
                             <span>↗</span>
                         </a>
@@ -1077,13 +1168,15 @@
              CTA FINAL
              ========================================= -->
 
-        <section id="contacto" class="services-cta-section">
+        <section id="contacto" class="services-cta-section reveal">
 
             <div class="cta-content">
 
                 <div class="section-eyebrow">
+
                     <span></span>
                     ¿TIENES UN PROYECTO?
+
                 </div>
 
                 <h2>

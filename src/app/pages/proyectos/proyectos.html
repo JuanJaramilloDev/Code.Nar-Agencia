@@ -8,17 +8,17 @@
 
         <section class="projects-hero">
 
-            <div class="section-eyebrow">
+            <div class="section-eyebrow hero-reveal">
                 <span></span>
                 NUESTROS PROYECTOS
             </div>
 
-            <h1>
+            <h1 class="hero-reveal">
                 Trabajo que
                 <span>habla por nosotros.</span>
             </h1>
 
-            <p>
+            <p class="hero-reveal">
                 Explora algunos de los proyectos que hemos desarrollado
                 para empresas, emprendimientos y profesionales,
                 combinando diseño, tecnología y funcionalidad.
@@ -33,7 +33,7 @@
 
         <section class="projects-section">
 
-            <div class="projects-header">
+            <div class="projects-header reveal">
 
                 <div>
                     <span class="projects-label">
@@ -59,14 +59,14 @@
 
                 @for (proyecto of proyectos; track proyecto.numero) {
 
-                <article class="project-card">
+                <article class="project-card reveal">
 
                     <!-- IMAGEN -->
 
                     <div class="project-image">
 
                         <img [src]="proyecto.imagen" [alt]="proyecto.titulo + ' - proyecto desarrollado por Code.Nar'"
-                            loading="lazy">
+                            loading="lazy" (error)="$any($event.target).style.display = 'none'">
 
                         <div class="project-number">
                             {{ proyecto.numero }}
@@ -109,11 +109,10 @@
 
                         <!-- BOTÓN -->
 
-                        <a [href]="proyecto.url" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a [href]="proyecto.url" [attr.target]="proyecto.externo === false ? null : '_blank'"
+                            [attr.rel]="proyecto.externo === false ? null : 'noopener noreferrer'" class="project-link">
 
-                            <span>
-                                Ver sitio
-                            </span>
+                            <span>{{ proyecto.externo === false ? 'Solicitar uno similar' : 'Ver sitio' }}</span>
 
                             <strong>
                                 ↗
@@ -138,7 +137,7 @@
 
         <section class="projects-cta">
 
-            <div class="projects-cta-content">
+            <div class="projects-cta-content reveal">
 
                 <div class="section-eyebrow">
                     <span></span>

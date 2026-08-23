@@ -137,6 +137,31 @@ export class Seo {
       name: 'twitter:image',
       content: this.getAbsoluteUrl(image),
     });
+
+    this.setStructuredData({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          name: this.siteName,
+          url: this.siteUrl,
+          description,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Pasto',
+            addressRegion: 'Nariño',
+            addressCountry: 'CO',
+          },
+        },
+        {
+          '@type': 'WebPage',
+          name: title,
+          description,
+          url: this.getAbsoluteUrl(canonical),
+          inLanguage: 'es-CO',
+        },
+      ],
+    });
   }
 
   /*
@@ -193,5 +218,20 @@ export class Seo {
     }
 
     return `${this.siteUrl}${path}`;
+  }
+
+  /** Datos estructurados legibles por buscadores, actualizados en cada ruta. */
+  private setStructuredData(data: object): void {
+    const id = 'codenar-schema';
+    let script = this.document.getElementById(id) as HTMLScriptElement | null;
+
+    if (!script) {
+      script = this.document.createElement('script');
+      script.id = id;
+      script.type = 'application/ld+json';
+      this.document.head.appendChild(script);
+    }
+
+    script.textContent = JSON.stringify(data);
   }
 }
