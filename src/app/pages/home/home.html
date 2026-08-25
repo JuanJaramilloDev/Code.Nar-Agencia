@@ -9,24 +9,24 @@
             </div>
 
             <h1 class="hero-reveal">
-                Diseño, desarrollo y estrategia digital
-                <span>para negocios que quieren crecer.</span>
+                Presencia digital que
+                <span>convierte visitas en clientes.</span>
             </h1>
 
             <p class="hero-description hero-reveal">
-                Somos Code.Nar: un equipo de diseño y desarrollo web que crea
-                sitios, tiendas online y sistemas a medida claros, rápidos y
-                enfocados en los objetivos de tu negocio.
+                Somos Code.Nar: diseñamos y desarrollamos sitios web, tiendas
+                online y sistemas a medida que combinan diseño, velocidad y
+                estrategia para que tu negocio venda más.
             </p>
 
             <div class="hero-actions hero-reveal">
                 <a routerLink="/contacto" class="btn btn-primary">
-                    Hablemos de tu proyecto
+                    Impulsa tu negocio
                     <span>↗</span>
                 </a>
 
-                <a href="#proyectos" class="btn btn-secondary">
-                    Ver proyectos
+                <a href="#servicios" class="btn btn-secondary">
+                    Ver servicios
                     <span>→</span>
                 </a>
             </div>
@@ -39,13 +39,13 @@
                 </div>
 
                 <div class="stat">
-                    <strong>100%</strong>
-                    <span>Desarrollo personalizado</span>
+                    <strong>6</strong>
+                    <span>Servicios digitales</span>
                 </div>
 
                 <div class="stat">
-                    <strong>CO</strong>
-                    <span>Colombia</span>
+                    <strong>100%</strong>
+                    <span>A la medida</span>
                 </div>
 
             </div>
@@ -107,6 +107,75 @@
 </section>
 
 
+<section class="why-section">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-eyebrow">
+                <span></span>
+                POR QUÉ CODE.NAR
+            </div>
+
+            <h2>
+                Resultados reales,
+                <span>no solo diseño bonito.</span>
+            </h2>
+
+            <p>
+                No vendemos plantillas genéricas. Cada proyecto se piensa
+                para generar más visibilidad, más clientes y más ventas
+                para tu negocio.
+            </p>
+
+        </div>
+
+        <div class="why-grid">
+
+            <article class="why-card reveal">
+                <div class="why-icon">◆</div>
+                <h3>Enfocados en resultados</h3>
+                <p>
+                    Diseñamos y desarrollamos pensando en conversión:
+                    que cada visita se convierta en una oportunidad real.
+                </p>
+            </article>
+
+            <article class="why-card reveal">
+                <div class="why-icon">◇</div>
+                <h3>100% a la medida</h3>
+                <p>
+                    Nada de plantillas. Cada sitio, tienda o sistema se
+                    construye según las necesidades reales de tu negocio.
+                </p>
+            </article>
+
+            <article class="why-card reveal">
+                <div class="why-icon">↗</div>
+                <h3>Comunicación directa</h3>
+                <p>
+                    Trabajas directamente con el equipo que desarrolla
+                    tu proyecto, sin intermediarios ni demoras.
+                </p>
+            </article>
+
+            <article class="why-card reveal">
+                <div class="why-icon">✦</div>
+                <h3>Tecnología moderna</h3>
+                <p>
+                    Sitios y sistemas rápidos, seguros y preparados
+                    para escalar junto con el crecimiento de tu negocio.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <section id="servicios" class="services-section">
 
     <div class="section-container">
@@ -119,14 +188,14 @@
             </div>
 
             <h2>
-                Soluciones digitales
-                <span>hechas para crecer.</span>
+                Todo lo que necesitas
+                <span>para vender más.</span>
             </h2>
 
             <p>
-                Convertimos ideas y necesidades de negocio en
-                productos digitales modernos, funcionales y
-                pensados para generar resultados.
+                Seis servicios pensados para cubrir cada etapa de tu
+                negocio digital: desde tu primera página hasta el
+                sistema que automatiza tu operación.
             </p>
 
         </div>
@@ -149,8 +218,8 @@
                     <div>
 
                         <p>
-                            Sitios web modernos, rápidos y adaptados a las
-                            necesidades de cada empresa o proyecto.
+                            Un sitio profesional que genera confianza
+                            y convierte visitas en clientes reales.
                         </p>
 
                         <a routerLink="/servicios" fragment="desarrollo-web" class="service-link">
@@ -185,9 +254,8 @@
                     <div>
 
                         <p>
-                            Tiendas digitales diseñadas para vender productos,
-                            gestionar pedidos y ofrecer una experiencia de
-                            compra profesional.
+                            Vende en línea 24/7 con una tienda rápida,
+                            segura y fácil de gestionar.
                         </p>
 
                         <a routerLink="/servicios" fragment="tiendas-online" class="service-link">
@@ -222,9 +290,8 @@
                     <div>
 
                         <p>
-                            Plataformas y sistemas personalizados para
-                            automatizar procesos y mejorar la operación
-                            de los negocios.
+                            Automatiza procesos y ahorra horas de trabajo
+                            con software construido a tu medida.
                         </p>
 
                         <a routerLink="/servicios" fragment="sistemas-web" class="service-link">
@@ -259,8 +326,8 @@
                     <div>
 
                         <p>
-                            Integraciones, automatizaciones y herramientas
-                            digitales construidas alrededor de cada necesidad.
+                            Conecta tus herramientas y haz que la
+                            tecnología trabaje a favor de tu negocio.
                         </p>
 
                         <a routerLink="/servicios" fragment="soluciones-digitales" class="service-link">
@@ -275,6 +342,78 @@
                     [attr.aria-label]="exp04.abierta()
                         ? 'Ocultar detalle de Soluciones Digitales'
                         : 'Ver detalle de Soluciones Digitales'">
+                    +
+                </button>
+
+            </article>
+
+
+            <article class="service-card exp" appExpandible #exp05="expandible">
+
+                <div class="service-number">05</div>
+
+                <a routerLink="/servicios" fragment="landing-pages" class="service-icon"
+                    aria-label="Ver servicio de Landing Pages">
+                    ▲
+                </a>
+
+                <h3>Landing Pages</h3>
+
+                <div class="exp-detalle" id="detalle-landing-pages">
+                    <div>
+
+                        <p>
+                            Páginas enfocadas en un solo objetivo:
+                            convertir visitantes en clientes.
+                        </p>
+
+                        <a routerLink="/servicios" fragment="landing-pages" class="service-link">
+                            Explorar servicio →
+                        </a>
+
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp05.alternar()"
+                    [attr.aria-expanded]="exp05.abierta()" aria-controls="detalle-landing-pages" [attr.aria-label]="exp05.abierta()
+                        ? 'Ocultar detalle de Landing Pages'
+                        : 'Ver detalle de Landing Pages'">
+                    +
+                </button>
+
+            </article>
+
+
+            <article class="service-card exp" appExpandible #exp06="expandible">
+
+                <div class="service-number">06</div>
+
+                <a routerLink="/servicios" fragment="marketing-digital" class="service-icon"
+                    aria-label="Ver servicio de Marketing Digital">
+                    ✦
+                </a>
+
+                <h3>Marketing Digital</h3>
+
+                <div class="exp-detalle" id="detalle-marketing-digital">
+                    <div>
+
+                        <p>
+                            Más visibilidad, más alcance y más
+                            oportunidades para tu negocio.
+                        </p>
+
+                        <a routerLink="/servicios" fragment="marketing-digital" class="service-link">
+                            Explorar servicio →
+                        </a>
+
+                    </div>
+                </div>
+
+                <button type="button" class="exp-toggle" (click)="exp06.alternar()"
+                    [attr.aria-expanded]="exp06.abierta()" aria-controls="detalle-marketing-digital" [attr.aria-label]="exp06.abierta()
+                        ? 'Ocultar detalle de Marketing Digital'
+                        : 'Ver detalle de Marketing Digital'">
                     +
                 </button>
 
@@ -440,6 +579,55 @@
                     ↗
                 </span>
             </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final-cta-section reveal">
+
+    <div class="section-container">
+
+        <div class="final-cta-inner">
+
+            <div class="section-eyebrow">
+                <span></span>
+                ¿LISTO PARA CRECER?
+            </div>
+
+            <h2>
+                Convirtamos tu idea
+                <em>en resultados reales.</em>
+            </h2>
+
+            <p>
+                Cuéntanos qué necesita tu negocio y te ayudamos a
+                encontrar el servicio digital adecuado para conseguirlo.
+            </p>
+
+            <div class="final-cta-actions">
+
+                <a routerLink="/contacto" class="btn btn-primary">
+                    Hablemos de tu proyecto
+                    <span>↗</span>
+                </a>
+
+                <a routerLink="/servicios" class="btn btn-secondary">
+                    Ver todos los servicios
+                    <span>→</span>
+                </a>
+
+            </div>
+
+            <p class="final-cta-whatsapp">
+                ¿Prefieres algo más rápido?
+                <a href="https://wa.me/573205319390" target="_blank" rel="noopener noreferrer">
+                    Escríbenos por WhatsApp
+                </a>
+            </p>
 
         </div>
 
