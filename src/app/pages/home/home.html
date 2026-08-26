@@ -88,7 +88,7 @@
             </div>
 
             <div class="floating-card">
-                <span class="floating-icon">✦</span>
+                <span class="floating-icon"><app-icon name="sparkles" [size]="16" /></span>
 
                 <div>
                     <strong>Soluciones</strong>
@@ -134,7 +134,7 @@
         <div class="why-grid">
 
             <article class="why-card reveal">
-                <div class="why-icon">◆</div>
+                <div class="why-icon"><app-icon name="target" [size]="19" /></div>
                 <h3>Enfocados en resultados</h3>
                 <p>
                     Diseñamos y desarrollamos pensando en conversión:
@@ -143,7 +143,7 @@
             </article>
 
             <article class="why-card reveal">
-                <div class="why-icon">◇</div>
+                <div class="why-icon"><app-icon name="adjustments" [size]="19" /></div>
                 <h3>100% a la medida</h3>
                 <p>
                     Nada de plantillas. Cada sitio, tienda o sistema se
@@ -152,7 +152,7 @@
             </article>
 
             <article class="why-card reveal">
-                <div class="why-icon">↗</div>
+                <div class="why-icon"><app-icon name="chat-bubble" [size]="19" /></div>
                 <h3>Comunicación directa</h3>
                 <p>
                     Trabajas directamente con el equipo que desarrolla
@@ -161,7 +161,7 @@
             </article>
 
             <article class="why-card reveal">
-                <div class="why-icon">✦</div>
+                <div class="why-icon"><app-icon name="sparkles" [size]="19" /></div>
                 <h3>Tecnología moderna</h3>
                 <p>
                     Sitios y sistemas rápidos, seguros y preparados
@@ -209,7 +209,7 @@
 
                 <a routerLink="/servicios" fragment="desarrollo-web" class="service-icon"
                     aria-label="Ver servicio de Desarrollo Web">
-                    ↗
+                    <app-icon name="code" [size]="20" />
                 </a>
 
                 <h3>Desarrollo Web</h3>
@@ -245,7 +245,7 @@
 
                 <a routerLink="/servicios" fragment="tiendas-online" class="service-icon"
                     aria-label="Ver servicio de Tiendas Online">
-                    ◇
+                    <app-icon name="shopping-bag" [size]="20" />
                 </a>
 
                 <h3>Tiendas Online</h3>
@@ -281,7 +281,7 @@
 
                 <a routerLink="/servicios" fragment="sistemas-web" class="service-icon"
                     aria-label="Ver servicio de Sistemas Web">
-                    +
+                    <app-icon name="cpu-chip" [size]="20" />
                 </a>
 
                 <h3>Sistemas Web</h3>
@@ -317,7 +317,7 @@
 
                 <a routerLink="/servicios" fragment="soluciones-digitales" class="service-icon"
                     aria-label="Ver servicio de Soluciones Digitales">
-                    ◌
+                    <app-icon name="link" [size]="20" />
                 </a>
 
                 <h3>Soluciones Digitales</h3>
@@ -354,7 +354,7 @@
 
                 <a routerLink="/servicios" fragment="landing-pages" class="service-icon"
                     aria-label="Ver servicio de Landing Pages">
-                    ▲
+                    <app-icon name="bolt" [size]="20" />
                 </a>
 
                 <h3>Landing Pages</h3>
@@ -390,7 +390,7 @@
 
                 <a routerLink="/servicios" fragment="marketing-digital" class="service-icon"
                     aria-label="Ver servicio de Marketing Digital">
-                    ✦
+                    <app-icon name="megaphone" [size]="20" />
                 </a>
 
                 <h3>Marketing Digital</h3>
@@ -465,20 +465,13 @@
 
                 <div class="project-image">
 
-                    <div class="project-placeholder">
+                    <img src="/images/reyinmobiliaria.png"
+                        alt="Captura de la plataforma web de Rey Inmobiliaria"
+                        loading="lazy"
+                        (error)="$any($event.target).style.display = 'none'" />
 
-                        <span>01</span>
-
-                        <strong>
-                            REY
-                            <em>INMOBILIARIA</em>
-                        </strong>
-
-                        <small>
-                            INMOBILIARIA · PLATAFORMA WEB
-                        </small>
-
-                    </div>
+                    <span class="project-image-number">01</span>
+                    <span class="project-image-category">INMOBILIARIA · PLATAFORMA WEB</span>
 
                 </div>
 
@@ -519,20 +512,13 @@
 
                 <div class="project-image">
 
-                    <div class="project-placeholder">
+                    <img src="/images/av21bar.png"
+                        alt="Captura del sistema de gestión de AV21BAR"
+                        loading="lazy"
+                        (error)="$any($event.target).style.display = 'none'" />
 
-                        <span>02</span>
-
-                        <strong>
-                            AV
-                            <em>21BAR</em>
-                        </strong>
-
-                        <small>
-                            NEGOCIO · SISTEMA DE GESTIÓN
-                        </small>
-
-                    </div>
+                    <span class="project-image-number">02</span>
+                    <span class="project-image-category">NEGOCIO · SISTEMA DE GESTIÓN</span>
 
                 </div>
 
@@ -624,7 +610,7 @@
 
             <p class="final-cta-whatsapp">
                 ¿Prefieres algo más rápido?
-                <a href="https://wa.me/573205319390" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/573200000000" target="_blank" rel="noopener noreferrer">
                     Escríbenos por WhatsApp
                 </a>
             </p>

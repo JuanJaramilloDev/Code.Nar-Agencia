@@ -165,7 +165,7 @@
             @for (principio of principios; track principio.numero) {
             <article class="principio reveal exp" appExpandible #expP="expandible">
                 <div class="principio-numero">{{ principio.numero }}</div>
-                <div class="principio-icono">{{ principio.icono }}</div>
+                <div class="principio-icono"><app-icon [name]="principio.icono" [size]="19" /></div>
 
                 <h3>{{ principio.titulo }}</h3>
 

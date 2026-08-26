@@ -28,488 +28,155 @@
 
 
         <!-- =========================================
-             RESUMEN DE SERVICIOS
+             BIENVENIDA / VISTAZO RÁPIDO
              ========================================= -->
 
-        <section class="services-overview reveal">
+        <section class="services-welcome reveal">
 
-            <div class="overview-header">
+            <div class="services-glance">
 
-                <div>
+                @for (servicio of servicios; track servicio.id) {
+                <button
+                    type="button"
+                    class="glance-item"
+                    (click)="irAServicio(servicio.id)"
+                >
+                    <span class="glance-icon">
+                        <app-icon [name]="servicio.icono" [size]="18" />
+                    </span>
+                    <span class="glance-label">{{ servicio.titulo }}</span>
+                </button>
+                }
 
-                    <div class="section-eyebrow">
-                        <span></span>
-                        LO QUE HACEMOS
-                    </div>
+            </div>
 
+        </section>
+
+
+        <!-- =========================================
+             SERVICIOS (LISTA ÚNICA)
+             ========================================= -->
+
+        <section class="services-list-section reveal">
+
+            <div class="services-list-header">
+
+                <div class="section-eyebrow">
+                    <span></span>
+                    LO QUE HACEMOS
                 </div>
 
-            </div>
-
-
-            <div class="overview-grid">
-
-                <!-- 01 -->
-
-                <article class="overview-card exp" appExpandible #expS01="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>01</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS01.alternar()"
-                            [attr.aria-expanded]="expS01.abierta()" aria-controls="resumen-desarrollo-web"
-                            [attr.aria-label]="expS01.abierta()
-                                ? 'Ocultar detalle de Desarrollo Web'
-                                : 'Ver detalle de Desarrollo Web'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            PRESENCIA DIGITAL
-                        </span>
-
-                        <h3>
-                            Desarrollo Web
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-desarrollo-web">
-
-                            <div>
-
-                                <p>
-                                    Sitios web modernos, rápidos y
-                                    profesionales para representar tu negocio.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="desarrollo-web" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 02 -->
-
-                <article class="overview-card exp" appExpandible #expS02="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>02</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS02.alternar()"
-                            [attr.aria-expanded]="expS02.abierta()" aria-controls="resumen-tiendas-online"
-                            [attr.aria-label]="expS02.abierta()
-                                ? 'Ocultar detalle de Tiendas Online'
-                                : 'Ver detalle de Tiendas Online'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            COMERCIO DIGITAL
-                        </span>
-
-                        <h3>
-                            Tiendas Online
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-tiendas-online">
-
-                            <div>
-
-                                <p>
-                                    E-commerce diseñados para vender productos
-                                    y facilitar la gestión de pedidos.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="tiendas-online" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 03 -->
-
-                <article class="overview-card exp" appExpandible #expS03="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>03</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS03.alternar()"
-                            [attr.aria-expanded]="expS03.abierta()" aria-controls="resumen-sistemas-web"
-                            [attr.aria-label]="expS03.abierta()
-                                ? 'Ocultar detalle de Sistemas Web'
-                                : 'Ver detalle de Sistemas Web'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            SOFTWARE A MEDIDA
-                        </span>
-
-                        <h3>
-                            Sistemas Web
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-sistemas-web">
-
-                            <div>
-
-                                <p>
-                                    Plataformas y herramientas digitales
-                                    para optimizar procesos.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="sistemas-web" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 04 -->
-
-                <article class="overview-card exp" appExpandible #expS04="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>04</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS04.alternar()"
-                            [attr.aria-expanded]="expS04.abierta()" aria-controls="resumen-soluciones-digitales"
-                            [attr.aria-label]="expS04.abierta()
-                                ? 'Ocultar detalle de Soluciones Digitales'
-                                : 'Ver detalle de Soluciones Digitales'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            INTEGRACIÓN
-                        </span>
-
-                        <h3>
-                            Soluciones Digitales
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-soluciones-digitales">
-
-                            <div>
-
-                                <p>
-                                    Automatizaciones, APIs e integraciones
-                                    adaptadas a cada negocio.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="soluciones-digitales" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 05 -->
-
-                <article class="overview-card exp" appExpandible #expS05="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>05</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS05.alternar()"
-                            [attr.aria-expanded]="expS05.abierta()" aria-controls="resumen-landing-pages"
-                            [attr.aria-label]="expS05.abierta()
-                                ? 'Ocultar detalle de Landing Pages'
-                                : 'Ver detalle de Landing Pages'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            CONVERSIÓN
-                        </span>
-
-                        <h3>
-                            Landing Pages
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-landing-pages">
-
-                            <div>
-
-                                <p>
-                                    Páginas enfocadas en presentar productos,
-                                    servicios y generar conversiones.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="landing-pages" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 06 -->
-
-                <article class="overview-card exp" appExpandible #expS06="expandible">
-
-                    <div class="overview-card-top">
-
-                        <span>06</span>
-
-                        <button type="button" class="exp-toggle" (click)="expS06.alternar()"
-                            [attr.aria-expanded]="expS06.abierta()" aria-controls="resumen-marketing-digital"
-                            [attr.aria-label]="expS06.abierta()
-                                ? 'Ocultar detalle de Marketing Digital'
-                                : 'Ver detalle de Marketing Digital'">
-                            +
-                        </button>
-
-                    </div>
-
-                    <div>
-
-                        <span class="overview-category">
-                            CRECIMIENTO
-                        </span>
-
-                        <h3>
-                            Marketing Digital
-                        </h3>
-
-                        <div class="exp-detalle" id="resumen-marketing-digital">
-
-                            <div>
-
-                                <p>
-                                    Estrategias digitales para aumentar
-                                    visibilidad, alcance y oportunidades.
-                                </p>
-
-                                <a routerLink="/servicios" fragment="marketing-digital" class="overview-link">
-                                    Ver servicio ↗
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <div class="overview-more">
-                <span></span>
+                <h2>
+                    Todo lo que necesitas para
+                    <span>llevar tu negocio al mundo digital.</span>
+                </h2>
 
                 <p>
-                    Conoce cada servicio en detalle
-                </p>
-
-                <span></span>
-            </div>
-
-
-            <div class="overview-header">
-
-                <div>
-
-                    <h2>
-                        Todo lo que necesitas para
-                        <span>
-                            llevar tu negocio al mundo digital.
-                        </span>
-                    </h2>
-
-                </div>
-
-                <p>
-                    Creamos soluciones digitales desde cero,
-                    combinando estrategia, diseño y tecnología
-                    para adaptarnos a las necesidades de cada proyecto.
+                    Seis servicios pensados para cubrir cada etapa de tu negocio
+                    digital. Toca cualquiera para ver qué incluye, para quién es
+                    y con qué tecnología lo construimos.
                 </p>
 
             </div>
 
-        </section>
+
+            <div class="services-accordion">
+
+                @for (servicio of servicios; track servicio.id) {
+
+                <article
+                    [id]="servicio.id"
+                    class="service-item"
+                    [class.is-open]="openService === servicio.id"
+                >
+
+                    <button
+                        type="button"
+                        class="service-item-header"
+                        (click)="toggleService(servicio.id)"
+                        [attr.aria-expanded]="openService === servicio.id"
+                        [attr.aria-controls]="'panel-' + servicio.id"
+                    >
+
+                        <span class="service-item-icon">
+                            <app-icon [name]="servicio.icono" [size]="19" />
+                        </span>
+
+                        <span class="service-item-heading">
+                            <span class="service-item-category">{{ servicio.numero }} · {{ servicio.categoria }}</span>
+                            <span class="service-item-title" [id]="'titulo-' + servicio.id">{{ servicio.titulo }}</span>
+                            <span class="service-item-resumen">{{ servicio.resumen }}</span>
+                        </span>
+
+                        <span class="service-item-toggle">
+                            <app-icon [name]="openService === servicio.id ? 'x-mark' : 'plus'" [size]="15" />
+                        </span>
+
+                    </button>
 
 
-        <!-- =========================================
-             DESARROLLO WEB
-             ========================================= -->
+                    <div
+                        class="service-item-panel"
+                        [id]="'panel-' + servicio.id"
+                        role="region"
+                        [attr.aria-labelledby]="'titulo-' + servicio.id"
+                    >
+                        <div class="service-item-panel-inner">
 
-        <section id="desarrollo-web" class="service-section reveal">
+                            <div class="service-content">
 
-            <div class="service-header">
+                                <div class="service-description">
 
-                <span class="service-index">
-                    01
-                </span>
+                                    <p class="service-main-text">{{ servicio.textoDestacado }}</p>
 
-                <div class="service-title">
+                                    <p>{{ servicio.texto }}</p>
 
-                    <span>
-                        PRESENCIA DIGITAL
-                    </span>
+                                    <a routerLink="/contacto" class="service-cta">
+                                        {{ servicio.cta }}
+                                        <span>↗</span>
+                                    </a>
 
-                    <h2>
-                        Desarrollo Web
-                    </h2>
-
-                </div>
-
-                <button type="button" class="service-toggle" (click)="toggleService('desarrollo-web')"
-                    [attr.aria-expanded]="openService === 'desarrollo-web'">
-
-                    <span>
-                        {{ openService === 'desarrollo-web'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'desarrollo-web'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
-
-            </div>
+                                </div>
 
 
-            <div class="service-expandable" [class.is-open]="openService === 'desarrollo-web'">
+                                <div class="service-details">
 
-                <div class="service-content">
+                                    <div class="detail-block">
+                                        <span>{{ servicio.incluyeLabel }}</span>
 
-                    <div class="service-description">
+                                        <ul>
+                                            @for (item of servicio.incluye; track item) {
+                                            <li>{{ item }}</li>
+                                            }
+                                        </ul>
+                                    </div>
 
-                        <p class="service-main-text">
-                            Creamos páginas web modernas que representan
-                            profesionalmente tu negocio y convierten
-                            visitantes en oportunidades.
-                        </p>
+                                    <div class="detail-block">
+                                        <span>IDEAL PARA</span>
+                                        <p>{{ servicio.idealPara }}</p>
+                                    </div>
 
-                        <p>
-                            Desde páginas corporativas y sitios informativos
-                            hasta proyectos digitales completos, desarrollamos
-                            cada proyecto pensando en velocidad, diseño,
-                            experiencia de usuario y posicionamiento.
-                        </p>
+                                </div>
 
-                        <a routerLink="/contacto" class="service-cta">
-                            Hablemos de tu proyecto
-                            <span>↗</span>
-                        </a>
-
-                    </div>
+                            </div>
 
 
-                    <div class="service-details">
+                            <div class="service-tech">
+                                <span>{{ servicio.tecLabel }}</span>
 
-                        <div class="detail-block">
-
-                            <span>
-                                INCLUYE
-                            </span>
-
-                            <ul>
-                                <li>Diseño responsive</li>
-                                <li>Optimización móvil</li>
-                                <li>SEO técnico básico</li>
-                                <li>Formularios</li>
-                                <li>Dominio y despliegue</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Empresas, profesionales, emprendimientos,
-                                marcas personales y negocios que necesitan
-                                una presencia digital profesional.
-                            </p>
+                                <div>
+                                    @for (tec of servicio.tecnologias; track tec) {
+                                    <span>{{ tec }}</span>
+                                    }
+                                </div>
+                            </div>
 
                         </div>
-
                     </div>
 
-                </div>
+                </article>
 
-
-                <div class="service-tech">
-
-                    <span>
-                        TECNOLOGÍAS
-                    </span>
-
-                    <div>
-                        <span>Angular</span>
-                        <span>Astro</span>
-                        <span>TypeScript</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-
-                </div>
+                }
 
             </div>
 
@@ -517,647 +184,84 @@
 
 
         <!-- =========================================
-             TIENDAS ONLINE
+             INVERSIÓN
              ========================================= -->
 
-        <section id="tiendas-online" class="service-section reveal">
+        <section class="pricing-section reveal">
 
-            <div class="service-header">
+            <div class="pricing-header">
 
-                <span class="service-index">
-                    02
-                </span>
-
-                <div class="service-title">
-
-                    <span>
-                        COMERCIO DIGITAL
-                    </span>
-
-                    <h2>
-                        Tiendas Online
-                    </h2>
-
+                <div class="section-eyebrow">
+                    <span></span>
+                    INVERSIÓN
                 </div>
 
-                <button type="button" class="service-toggle" (click)="toggleService('tiendas-online')"
-                    [attr.aria-expanded]="openService === 'tiendas-online'">
+                <h2>
+                    Dos formas de
+                    <span>trabajar juntos.</span>
+                </h2>
 
-                    <span>
-                        {{ openService === 'tiendas-online'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'tiendas-online'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
+                <p>
+                    El precio final depende del alcance y lo cerramos contigo
+                    después de entender qué necesitas. Estos son los pisos
+                    desde donde partimos.
+                </p>
 
             </div>
 
+            <div class="pricing-grid">
 
-            <div class="service-expandable" [class.is-open]="openService === 'tiendas-online'">
+                <article class="pricing-card">
 
-                <div class="service-content">
-
-                    <div class="service-description">
-
-                        <p class="service-main-text">
-                            Transformamos tus productos en una experiencia
-                            de compra digital clara, rápida y profesional.
-                        </p>
-
-                        <p>
-                            Desarrollamos tiendas online adaptadas a las
-                            necesidades de cada negocio, permitiendo gestionar
-                            productos, pedidos y clientes desde una plataforma
-                            centralizada.
-                        </p>
-
-                        <a routerLink="/contacto" class="service-cta">
-                            Hablemos de tu proyecto
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="service-details">
-
-                        <div class="detail-block">
-
-                            <span>
-                                INCLUYE
-                            </span>
-
-                            <ul>
-                                <li>Catálogo de productos</li>
-                                <li>Carrito de compras</li>
-                                <li>Gestión de pedidos</li>
-                                <li>Diseño responsive</li>
-                                <li>Integración de pagos</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Comercios, marcas de productos,
-                                emprendimientos y negocios que quieren
-                                comenzar o fortalecer sus ventas online.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="service-tech">
-
-                    <span>
-                        TECNOLOGÍAS
+                    <span class="pricing-card-icon">
+                        <app-icon name="bolt" [size]="22" />
                     </span>
 
-                    <div>
-                        <span>Angular</span>
-                        <span>TypeScript</span>
-                        <span>Supabase</span>
-                        <span>APIs</span>
-                    </div>
+                    <span class="pricing-card-label">PROYECTOS · PAGO ÚNICO</span>
 
-                </div>
+                    <h3>
+                        Desde
+                        <strong>$200.000</strong>
+                    </h3>
 
-            </div>
+                    <p>
+                        Ideal si necesitas un sitio, tienda o sistema con
+                        alcance definido y prefieres pagar una sola vez.
+                    </p>
 
-        </section>
+                    <a routerLink="/contacto" class="pricing-card-cta">
+                        Cotizar mi proyecto
+                        <span>↗</span>
+                    </a>
 
+                </article>
 
-        <!-- =========================================
-             SISTEMAS WEB
-             ========================================= -->
+                <article class="pricing-card">
 
-        <section id="sistemas-web" class="service-section reveal">
-
-            <div class="service-header">
-
-                <span class="service-index">
-                    03
-                </span>
-
-                <div class="service-title">
-
-                    <span>
-                        SOFTWARE A MEDIDA
+                    <span class="pricing-card-icon">
+                        <app-icon name="clock" [size]="22" />
                     </span>
 
-                    <h2>
-                        Sistemas Web
-                    </h2>
-
-                </div>
-
-                <button type="button" class="service-toggle" (click)="toggleService('sistemas-web')"
-                    [attr.aria-expanded]="openService === 'sistemas-web'">
-
-                    <span>
-                        {{ openService === 'sistemas-web'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'sistemas-web'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
-
-            </div>
-
-
-            <div class="service-expandable" [class.is-open]="openService === 'sistemas-web'">
-
-                <div class="service-content">
-
-                    <div class="service-description">
-
-                        <p class="service-main-text">
-                            Convertimos procesos manuales en herramientas
-                            digitales diseñadas específicamente para tu negocio.
-                        </p>
-
-                        <p>
-                            Desarrollamos sistemas administrativos, plataformas
-                            internas, dashboards y aplicaciones web que ayudan
-                            a organizar información, automatizar procesos y
-                            mejorar la operación.
-                        </p>
-
-                        <a routerLink="/contacto" class="service-cta">
-                            Hablemos de tu proyecto
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="service-details">
-
-                        <div class="detail-block">
-
-                            <span>
-                                INCLUYE
-                            </span>
-
-                            <ul>
-                                <li>Paneles administrativos</li>
-                                <li>Gestión de usuarios</li>
-                                <li>CRUD y bases de datos</li>
-                                <li>Dashboards</li>
-                                <li>Automatización de procesos</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Empresas que necesitan digitalizar procesos,
-                                centralizar información o desarrollar una
-                                herramienta específica para su operación.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="service-tech">
-
-                    <span>
-                        TECNOLOGÍAS
-                    </span>
-
-                    <div>
-                        <span>Angular</span>
-                        <span>TypeScript</span>
-                        <span>Laravel</span>
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>Supabase</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             SOLUCIONES DIGITALES
-             ========================================= -->
-
-        <section id="soluciones-digitales" class="service-section reveal">
-
-            <div class="service-header">
-
-                <span class="service-index">
-                    04
-                </span>
-
-                <div class="service-title">
-
-                    <span>
-                        INTEGRACIÓN Y AUTOMATIZACIÓN
-                    </span>
-
-                    <h2>
-                        Soluciones Digitales
-                    </h2>
-
-                </div>
-
-                <button type="button" class="service-toggle" (click)="toggleService('soluciones-digitales')"
-                    [attr.aria-expanded]="openService === 'soluciones-digitales'">
-
-                    <span>
-                        {{ openService === 'soluciones-digitales'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'soluciones-digitales'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
-
-            </div>
-
-
-            <div class="service-expandable" [class.is-open]="openService === 'soluciones-digitales'">
-
-                <div class="service-content">
-
-                    <div class="service-description">
-
-                        <p class="service-main-text">
-                            Conectamos herramientas y procesos para que
-                            la tecnología trabaje a favor de tu negocio.
-                        </p>
-
-                        <p>
-                            Diseñamos soluciones específicas para necesidades
-                            que no encajan en un producto tradicional:
-                            integraciones, automatizaciones, APIs y
-                            herramientas digitales personalizadas.
-                        </p>
-
-                        <a routerLink="/contacto" class="service-cta">
-                            Cuéntanos tu idea
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="service-details">
-
-                        <div class="detail-block">
-
-                            <span>
-                                PODEMOS TRABAJAR EN
-                            </span>
-
-                            <ul>
-                                <li>Integraciones con APIs</li>
-                                <li>Automatización de tareas</li>
-                                <li>Conexión entre plataformas</li>
-                                <li>Herramientas internas</li>
-                                <li>Soluciones personalizadas</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Negocios con procesos repetitivos,
-                                diferentes herramientas que necesitan
-                                conectarse o necesidades digitales específicas.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="service-tech">
-
-                    <span>
-                        TECNOLOGÍAS
-                    </span>
-
-                    <div>
-                        <span>APIs</span>
-                        <span>Angular</span>
-                        <span>Laravel</span>
-                        <span>PHP</span>
-                        <span>Supabase</span>
-                        <span>REST</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             LANDING PAGES
-             ========================================= -->
-
-        <section id="landing-pages" class="service-section service-section-featured reveal">
-
-            <div class="service-header">
-
-                <span class="service-index">
-                    05
-                </span>
-
-                <div class="service-title">
-
-                    <span>
-                        CONVERSIÓN DIGITAL
-                    </span>
-
-                    <h2>
-                        Landing Pages
-                    </h2>
-
-                </div>
-
-                <button type="button" class="service-toggle" (click)="toggleService('landing-pages')"
-                    [attr.aria-expanded]="openService === 'landing-pages'">
-
-                    <span>
-                        {{ openService === 'landing-pages'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'landing-pages'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
-
-            </div>
-
-
-            <div class="service-expandable" [class.is-open]="openService === 'landing-pages'">
-
-                <div class="service-content">
-
-                    <div class="service-description">
-
-                        <p class="service-main-text">
-                            Creamos landing pages enfocadas en una sola
-                            acción: captar clientes, presentar una oferta
-                            o convertir visitantes.
-                        </p>
-
-                        <p>
-                            Diseñamos estructuras claras y estratégicas
-                            que combinan copy, diseño, velocidad y
-                            llamadas a la acción para que tu página
-                            tenga un objetivo concreto.
-                        </p>
-
-                        <a routerLink="/contacto" class="service-cta">
-                            Diseñemos tu landing
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="service-details">
-
-                        <div class="detail-block">
-
-                            <span>
-                                INCLUYE
-                            </span>
-
-                            <ul>
-                                <li>Diseño orientado a conversión</li>
-                                <li>Secciones estratégicas</li>
-                                <li>Formularios y CTA</li>
-                                <li>Diseño responsive</li>
-                                <li>Optimización de velocidad</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Campañas publicitarias, lanzamiento de
-                                productos, servicios profesionales,
-                                eventos y captación de clientes.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="service-tech">
-
-                    <span>
-                        TECNOLOGÍAS
-                    </span>
-
-                    <div>
-                        <span>Angular</span>
-                        <span>Astro</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>TypeScript</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             MARKETING DIGITAL
-             ========================================= -->
-
-        <section id="marketing-digital" class="service-section service-section-featured reveal">
-
-            <div class="service-header">
-
-                <span class="service-index">
-                    06
-                </span>
-
-                <div class="service-title">
-
-                    <span>
-                        CRECIMIENTO Y VISIBILIDAD
-                    </span>
-
-                    <h2>
-                        Marketing Digital
-                    </h2>
-
-                </div>
-
-                <button type="button" class="service-toggle" (click)="toggleService('marketing-digital')"
-                    [attr.aria-expanded]="openService === 'marketing-digital'">
-
-                    <span>
-                        {{ openService === 'marketing-digital'
-                        ? 'Ocultar'
-                        : 'Ver más' }}
-                    </span>
-
-                    <strong>
-                        {{ openService === 'marketing-digital'
-                        ? '−'
-                        : '+' }}
-                    </strong>
-
-                </button>
-
-            </div>
-
-
-            <div class="service-expandable" [class.is-open]="openService === 'marketing-digital'">
-
-                <div class="service-content">
-
-                    <div class="service-description">
-
-                        <p class="service-main-text">
-                            Ayudamos a que tu negocio no solo tenga
-                            presencia digital, sino que también consiga
-                            mayor visibilidad y oportunidades.
-                        </p>
-
-                        <p>
-                            Podemos trabajar estrategias de contenido,
-                            posicionamiento, campañas digitales y
-                            optimización de canales para conectar tu
-                            negocio con las personas correctas.
-                        </p>
-
-                        <a routerLink="/contacto" class="service-cta">
-                            Hablemos de crecimiento
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="service-details">
-
-                        <div class="detail-block">
-
-                            <span>
-                                PODEMOS TRABAJAR EN
-                            </span>
-
-                            <ul>
-                                <li>Estrategia digital</li>
-                                <li>SEO y posicionamiento</li>
-                                <li>Contenido para redes</li>
-                                <li>Campañas digitales</li>
-                                <li>Optimización de conversiones</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="detail-block">
-
-                            <span>
-                                IDEAL PARA
-                            </span>
-
-                            <p>
-                                Negocios que quieren aumentar su
-                                visibilidad, atraer nuevos clientes
-                                y fortalecer su presencia digital.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="service-tech">
-
-                    <span>
-                        ÁREAS
-                    </span>
-
-                    <div>
-                        <span>SEO</span>
-                        <span>Contenido</span>
-                        <span>Redes Sociales</span>
-                        <span>Analítica</span>
-                        <span>Publicidad</span>
-                    </div>
-
-                </div>
+                    <span class="pricing-card-label">PLAN MENSUAL</span>
+
+                    <h3>
+                        Desde
+                        <strong>$150.000</strong>
+                        <small>/ mes</small>
+                    </h3>
+
+                    <p>
+                        Incluye mantenimiento, cambios menores y soporte,
+                        para que tu sitio siga funcionando sin que tengas
+                        que pensarlo.
+                    </p>
+
+                    <a routerLink="/contacto" class="pricing-card-cta">
+                        Consultar el plan
+                        <span>↗</span>
+                    </a>
+
+                </article>
 
             </div>
 
@@ -1190,7 +294,7 @@
                     para tu negocio.
                 </p>
 
-                <a href="https://wa.me/573205319390" target="_blank" rel="noopener noreferrer" class="cta-button">
+                <a href="https://wa.me/573200000000" target="_blank" rel="noopener noreferrer" class="cta-button">
                     Hablemos de tu proyecto
                     <span>↗</span>
                 </a>

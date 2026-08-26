@@ -8,6 +8,7 @@ import {
 
 import { RouterLink } from '@angular/router';
 
+import { Icon, IconName } from '../../components/icon/icon';
 import { Expandible } from '../../directives/expandible';
 
 import { gsap } from 'gsap';
@@ -19,7 +20,7 @@ import { Seo } from '../../services/seo';
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [RouterLink, Expandible],
+  imports: [RouterLink, Expandible, Icon],
   templateUrl: './nosotros.html',
   styleUrl: './nosotros.css',
 })
@@ -38,36 +39,36 @@ export class Nosotros {
 
   readonly metricas = [
     { valor: '1', etiqueta: 'Equipo unido', detalle: 'Un grupo, no una bolsa de freelancers' },
-    { valor: '6+', etiqueta: 'Proyectos entregados', detalle: 'De landing pages a sistemas de gestión' },
+    { valor: '8+', etiqueta: 'Proyectos entregados', detalle: 'De landing pages a sistemas de gestión' },
     { valor: '100%', etiqueta: 'Código propio', detalle: 'Nada de plantillas recicladas' },
     { valor: '24 h', etiqueta: 'Tiempo de respuesta', detalle: 'Días hábiles, sin excepciones' },
   ];
 
-  readonly principios = [
+  readonly principios: { numero: string; icono: IconName; titulo: string; texto: string }[] = [
     {
       numero: '01',
-      icono: '◆',
+      icono: 'chat-bubble',
       titulo: 'Hablamos claro',
       texto:
         'Nada de tecnicismos para inflar la factura. Explicamos qué hacemos, por qué y cuánto cuesta antes de empezar.',
     },
     {
       numero: '02',
-      icono: '◇',
+      icono: 'shield-check',
       titulo: 'El proyecto es tuyo',
       texto:
         'Dominio, hosting y código quedan a tu nombre desde el primer día. Si decides irte, te llevas todo sin pedir permiso.',
     },
     {
       numero: '03',
-      icono: '✦',
+      icono: 'adjustments',
       titulo: 'Construimos a medida',
       texto:
         'Cada negocio opera distinto. Partimos de tu forma de trabajar, no de una plantilla que toca deformar hasta que encaje.',
     },
     {
       numero: '04',
-      icono: '◎',
+      icono: 'code',
       titulo: 'Hablas con quien desarrolla',
       texto:
         'Sin intermediarios ni gestores de cuenta. La persona que responde tus mensajes es la que escribe el código.',
@@ -148,7 +149,7 @@ export class Nosotros {
     this.seo.update({
       title: 'Sobre Code.Nar | Desarrollo Web y Soluciones Digitales',
       description:
-        'Conoce al equipo detrás de Code.Nar: especialistas en diseño y desarrollo de páginas web, tiendas online y sistemas a medida para empresas y emprendimientos en Colombia.',
+        'Conoce al equipo de Code.Nar: especialistas en diseño y desarrollo web, tiendas online y sistemas a medida, con sede en Pasto, Nariño.',
       canonical: '/nosotros',
     });
 

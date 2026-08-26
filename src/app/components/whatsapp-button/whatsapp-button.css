@@ -1,8 +1,58 @@
-.whatsapp-button {
+.social-floating {
   position: fixed;
   right: 24px;
   bottom: 24px;
   z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* ================================
+   ICONOS SECUNDARIOS (INSTAGRAM / TIKTOK)
+   ================================ */
+
+.social-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+.social-icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-icon-button:hover {
+  filter: brightness(1.12) saturate(1.15);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* Colores propios de cada red: fondo de marca, ícono en blanco encima. */
+
+.social-icon-button--instagram {
+  background: linear-gradient(135deg, #feda75 0%, #fa7e1e 22%, #d62976 55%, #962fbf 78%, #4f5bd5 100%);
+}
+
+.social-icon-button--tiktok {
+  background: linear-gradient(135deg, #25f4ee 0%, #0a0a0a 48%, #fe2c55 100%);
+}
+
+/* ================================
+   WHATSAPP (PRINCIPAL)
+   ================================ */
+
+.whatsapp-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -30,13 +80,38 @@
   transform: translateY(-4px);
 }
 
+/* ================================
+   MÓVIL — que no tapen la pantalla
+   ================================ */
+
 @media (max-width: 600px) {
-  .whatsapp-button {
+  .social-floating {
     right: 16px;
     bottom: 16px;
-    width: 54px;
+    gap: 10px;
+  }
+
+  .social-icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .whatsapp-button {
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
     padding: 0;
     justify-content: center;
+  }
+
+  .whatsapp-button svg {
+    width: 23px;
+    height: 23px;
   }
 
   .whatsapp-button span {
@@ -47,4 +122,21 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
+}
+
+/* ================================
+   ACCESIBILIDAD
+   ================================ */
+
+@media (hover: none) {
+  .social-icon-button:hover,
+  .whatsapp-button:hover {
+    transform: none;
+  }
+}
+
+.social-icon-button:focus-visible,
+.whatsapp-button:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 3px;
 }
