@@ -426,7 +426,6 @@
   border-radius: 13px;
   background: rgba(212, 175, 55, 0.06);
   color: var(--color-gold);
-  font-size: 18px;
   transition: all var(--transition);
 }
 

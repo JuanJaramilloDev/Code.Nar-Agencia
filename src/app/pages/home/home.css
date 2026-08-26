@@ -309,7 +309,6 @@
   border-radius: 10px;
   background: var(--color-gold-soft);
   color: var(--color-gold);
-  font-size: 16px;
 }
 .why-card h3 {
   margin: 0 0 10px;
@@ -412,7 +411,6 @@
   border-radius: 12px;
   background: var(--color-gold-soft);
   color: var(--color-gold);
-  font-size: 20px;
   transition: all var(--transition);
 }
 .service-icon:hover {
@@ -490,46 +488,54 @@
   overflow: hidden;
   background: radial-gradient(circle at 50% 50%,rgba(212,175,55,0.12),transparent 50%),#111111;
 }
-.project-image::before {
+.project-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+.project-image::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,rgba(255,255,255,0.05),transparent 45%);
+  pointer-events: none;
 }
-.project-placeholder {
+.project-image-number {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 45px;
-}
-.project-placeholder > span {
-  margin-bottom: 18px;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-gold);
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-.project-placeholder strong {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-body);
-  color: var(--color-white);
-  font-size: clamp(38px,5vw,64px);
-  line-height: 0.9;
-  font-weight: 700;
-  letter-spacing: -3px;
-}
-.project-placeholder strong em {
-  color: var(--color-gold);
-  font-style: italic;
+  font-size: 9px;
   font-weight: 600;
-}
-.project-placeholder small {
-  margin-top: 25px;
-  color: var(--color-gray);
-  font-size: 8px;
   letter-spacing: 2px;
+}
+.project-image-category {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-white-soft);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
 }
 .project-info {
   position: relative;
@@ -649,7 +655,7 @@
 }
 .final-cta-section {
   position: relative;
-  padding: 130px 0;
+  padding: 100px 0;
   background: radial-gradient(circle at 30% 30%, rgba(212,175,55,0.07), transparent 45%), var(--color-black);
   border-top: 1px solid var(--color-border);
   overflow: hidden;
@@ -688,10 +694,10 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-top: 36px;
+  margin: 36px 0 30px;
 }
 .final-cta-whatsapp {
-  margin-top: 20px;
+  margin-top: 10px;
   color: var(--color-gray-dark);
   font-size: 11px;
 }
@@ -747,9 +753,6 @@
   .project-image {
     min-height: 280px;
   }
-  .project-placeholder {
-    padding: 35px;
-  }
   .project-info {
     padding: 35px;
   }
@@ -770,17 +773,6 @@
   .services-grid {
     grid-template-columns: 1fr;
     border-radius: 16px;
-  }
-  .service-card {
-    min-height: 290px;
-    padding: 28px;
-  }
-  .service-icon {
-    margin-bottom: 55px;
-  }
-  .service-link {
-    right: 28px;
-    bottom: 28px;
   }
 }
 @media (max-width:600px) {
@@ -856,8 +848,8 @@
   .project-image {
     min-height: 250px;
   }
-  .project-placeholder strong {
-    font-size: 45px;
+  .project-image-category {
+    display: none;
   }
   .project-info h3 {
     font-size: 36px;
@@ -963,20 +955,35 @@
 
   .service-card {
     min-height: 0;
-    padding: 28px;
+    padding: 22px 24px;
   }
 
   .service-icon {
-    margin-bottom: 22px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
   }
 
+  .service-card h3 {
+    font-size: 19px;
+  }
+
+  .service-card p {
+    font-size: 12.5px;
+  }
+
+  .service-card .exp-detalle > div {
+    padding-top: 10px;
+  }
+
+  /* El botón de plegar deja el espacio justo para no separar tarjetas. */
   .service-card.exp-tactil {
-    padding-bottom: 70px;
+    padding-bottom: 52px;
   }
 
   .service-card .exp-toggle {
-    right: 22px;
-    bottom: 22px;
+    right: 20px;
+    bottom: 18px;
   }
 }
 

@@ -46,7 +46,7 @@ export class Proyectos {
         'TypeScript'
       ],
       imagen: '/images/reyinmobiliaria.png',
-      url: 'https://reyinmobiliaria.com',
+      url: 'https://reyinmobiliaria.net',
       externo: true,
     },
 

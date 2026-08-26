@@ -15,6 +15,7 @@ import {
 
 import { RouterLink } from '@angular/router';
 
+import { Icon } from '../../components/icon/icon';
 import { Expandible } from '../../directives/expandible';
 
 import { gsap } from 'gsap';
@@ -44,7 +45,7 @@ type CampoContacto =
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, Expandible],
+  imports: [ReactiveFormsModule, RouterLink, Expandible, Icon],
   templateUrl: './contacto.html',
   styleUrl: './contacto.css',
 })
@@ -73,6 +74,34 @@ export class Contacto {
     'Prefiero conversarlo',
   ];
 
+  readonly faqs = [
+    {
+      pregunta: '¿Cuánto cuesta una página web?',
+      respuesta:
+        'Los proyectos parten desde $200.000 (pago único) y los planes mensuales desde $150.000. Pero eso es solo el piso: el precio final depende del alcance, así que lo cerramos contigo después de entender qué necesitas, nunca antes.',
+    },
+    {
+      pregunta: '¿Cuánto tarda el desarrollo?',
+      respuesta:
+        'Una web corporativa suele tomar de 3 a 5 semanas. Una tienda online, entre 5 y 8. Los sistemas a medida se definen por fases, con entregas parciales para que veas avances desde la primera semana.',
+    },
+    {
+      pregunta: '¿Trabajan con negocios fuera de Nariño?',
+      respuesta:
+        'Sí. Trabajamos en remoto con clientes de toda Colombia y del exterior. Todo el proceso se lleva por videollamada y mensajería, con entregas documentadas.',
+    },
+    {
+      pregunta: '¿Qué pasa después de entregar el proyecto?',
+      respuesta:
+        'Incluimos acompañamiento tras la entrega para resolver ajustes y dudas. Si quieres que sigamos manteniendo o evolucionando el proyecto, lo acordamos aparte.',
+    },
+    {
+      pregunta: '¿El sitio queda a mi nombre?',
+      respuesta:
+        'Sí. El dominio, el hosting y el código quedan a tu nombre. No secuestramos proyectos: si algún día decides irte, te llevas todo.',
+    },
+  ];
+
   readonly form = this.fb.nonNullable.group({
     nombre: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
@@ -89,8 +118,21 @@ export class Contacto {
     this.seo.update({
       title: 'Contacto | Hablemos de tu proyecto — Code.Nar',
       description:
-        'Cuéntanos qué necesitas y te respondemos en menos de 24 horas. Desarrollo web, tiendas online y sistemas a medida en Colombia.',
+        'Cuéntanos qué necesitas y te respondemos en menos de 24 horas. Desarrollo web, tiendas online y sistemas a medida en Pasto, Nariño y toda Colombia.',
       canonical: '/contacto',
+      extraSchema: [
+        {
+          '@type': 'FAQPage',
+          mainEntity: this.faqs.map((item) => ({
+            '@type': 'Question',
+            name: item.pregunta,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.respuesta,
+            },
+          })),
+        },
+      ],
     });
 
     // GSAP solo corre en el navegador: afterNextRender no se ejecuta durante el SSR.

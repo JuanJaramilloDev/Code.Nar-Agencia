@@ -1,5 +1,6 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Icon } from '../../components/icon/icon';
 import { Expandible } from '../../directives/expandible';
 import { Seo } from '../../services/seo';
 import { initScrollAnimations } from '../../services/scroll-animations';
@@ -7,7 +8,7 @@ import { initScrollAnimations } from '../../services/scroll-animations';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, Expandible],
+  imports: [RouterLink, Expandible, Icon],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -24,7 +25,7 @@ export class Home {
       title: 'Desarrollo Web en Colombia | Code.Nar',
 
       description:
-        'Code.Nar diseña y desarrolla páginas web, landing pages, tiendas online y soluciones digitales para empresas, emprendimientos y profesionales en Colombia.',
+        'Code.Nar diseña y desarrolla páginas web, landing pages, tiendas online y soluciones digitales para empresas, emprendimientos y profesionales en Colombia. Con sede en Pasto, Nariño.',
 
       canonical: '/',
 
