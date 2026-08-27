@@ -9,7 +9,7 @@
   z-index: 100;
   width: 100%;
   padding: 18px 0;
-  background: rgba(8, 8, 8, 0.82);
+  background: rgba(8, 8, 8, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -18,9 +18,9 @@
 }
 
 .navbar-scrolled {
-  padding: 12px 0;
+  padding: 11px 0;
   background: rgba(8, 8, 8, 0.94);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--rule);
 }
 
 .navbar-container {
@@ -43,21 +43,23 @@
 }
 
 .brand-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 11px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
   object-fit: cover;
   box-shadow: var(--shadow-gold);
 }
 
 .brand-name {
-  font-family: var(--font-body);
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 440;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
 }
 
 .brand-name span {
+  font-style: italic;
   color: var(--color-gold);
 }
 
@@ -69,14 +71,17 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
 }
 
 .desktop-nav a {
   position: relative;
-  color: var(--color-gray);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray);
   transition: color var(--transition);
 }
 
@@ -118,14 +123,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 20px;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 999px;
-  background: rgba(212, 175, 55, 0.08);
+  padding: 11px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: rgba(212, 175, 55, 0.06);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-white);
-  font-size: 13px;
-  font-weight: 600;
-  transition: all var(--transition);
+  transition: background var(--transition), color var(--transition),
+    border-color var(--transition);
 }
 
 .navbar-cta span {
@@ -134,8 +143,8 @@
 
 .navbar-cta:hover {
   background: var(--color-gold);
+  border-color: var(--color-gold);
   color: var(--color-black);
-  box-shadow: var(--shadow-gold);
 }
 
 .navbar-cta:hover span {
@@ -155,7 +164,7 @@
   gap: 6px;
   width: 44px;
   height: 44px;
-  border-radius: 11px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
   transition: background var(--transition);
@@ -226,17 +235,18 @@
   justify-content: space-between;
   padding: 20px 0;
   border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 420;
+  letter-spacing: -0.01em;
   color: var(--color-white-soft);
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
   transition: color var(--transition), padding-left var(--transition);
 }
 
 .menu-movil nav a span {
   color: var(--color-gray-dark);
-  font-size: 15px;
-  transition: all var(--transition);
+  font-size: 0.95rem;
+  transition: transform var(--transition), color var(--transition);
 }
 
 .menu-movil nav a:hover,
@@ -258,11 +268,14 @@
   gap: 10px;
   min-height: 54px;
   margin-top: 32px;
-  border-radius: 999px;
+  border-radius: 3px;
   background: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-black);
-  font-size: 14px;
-  font-weight: 600;
   box-shadow: var(--shadow-gold);
 }
 
@@ -307,12 +320,12 @@
   }
 
   .brand-name {
-    font-size: 19px;
+    font-size: 1.25rem;
   }
 
   .brand-mark {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -337,7 +350,6 @@
    ================================ */
 
 @supports (padding: max(0px)) {
-
   .navbar-container {
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
@@ -349,9 +361,7 @@
   }
 }
 
-
 @media (hover: none) {
-
   .menu-movil nav a:hover {
     padding-left: 0;
   }
@@ -361,10 +371,7 @@
   }
 }
 
-
-/* El menú se adapta a pantallas muy estrechas y a poca altura. */
 @media (max-width: 400px) {
-
   .menu-movil {
     width: min(300px, 88vw);
     padding-left: 26px;
@@ -373,12 +380,11 @@
 
   .menu-movil nav a {
     padding: 17px 0;
-    font-size: 17px;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-height: 560px) {
-
   .menu-movil {
     justify-content: flex-start;
     padding-top: 88px;
@@ -387,6 +393,6 @@
 
   .menu-movil nav a {
     padding: 14px 0;
-    font-size: 16px;
+    font-size: 1.15rem;
   }
 }

@@ -18,10 +18,8 @@ import { RouterLink } from '@angular/router';
 import { Icon } from '../../components/icon/icon';
 import { Expandible } from '../../directives/expandible';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import { Seo } from '../../services/seo';
+import { initScrollAnimations } from '../../services/scroll-animations';
 
 
 /**
@@ -136,7 +134,9 @@ export class Contacto {
     });
 
     // GSAP solo corre en el navegador: afterNextRender no se ejecuta durante el SSR.
-    afterNextRender(() => this.initAnimaciones());
+    afterNextRender(() =>
+      initScrollAnimations(this.host, this.destroyRef, '.hero-contacto', '.hero-contacto-glow'),
+    );
   }
 
 
@@ -177,88 +177,5 @@ export class Contacto {
 
   volverAEscribir(): void {
     this.estado.set('idle');
-  }
-
-
-  /*
-   * =========================================
-   * ANIMACIONES
-   * =========================================
-   */
-
-  private initAnimaciones(): void {
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-
-      const mm = gsap.matchMedia();
-
-      mm.add(
-        {
-          animar: '(prefers-reduced-motion: no-preference)',
-          reducido: '(prefers-reduced-motion: reduce)',
-        },
-        (context) => {
-
-          const { reducido } = context.conditions as { reducido: boolean };
-
-          // Con movimiento reducido solo revelamos el contenido, sin desplazamientos.
-          if (reducido) {
-            gsap.set('.reveal, .hero-contacto-content > *', {
-              opacity: 1,
-              y: 0,
-            });
-            return;
-          }
-
-          // Entrada del hero.
-          gsap.from('.hero-contacto-content > *', {
-            opacity: 0,
-            y: 30,
-            duration: 0.9,
-            stagger: 0.09,
-            ease: 'power3.out',
-          });
-
-          gsap.from('.hero-contacto-glow', {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1.6,
-            ease: 'power2.out',
-          });
-
-          // Revelado por scroll de cada bloque.
-          gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {
-            gsap.from(el, {
-              opacity: 0,
-              y: 40,
-              duration: 0.8,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                once: true,
-              },
-            });
-          });
-
-          // Parallax suave del halo del hero.
-          gsap.to('.hero-contacto-glow', {
-            yPercent: 25,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.hero-contacto',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            },
-          });
-        },
-      );
-
-    }, this.host.nativeElement);
-
-    this.destroyRef.onDestroy(() => ctx.revert());
   }
 }
