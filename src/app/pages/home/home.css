@@ -20,6 +20,7 @@
   align-items: center;
   gap: 70px;
   padding-top: 100px;
+  padding-bottom: 20px;
 }
 .hero-content {
   max-width: 650px;
@@ -279,7 +280,7 @@
 }
 .why-section {
   position: relative;
-  padding: 110px 0;
+  padding: 90px 0;
   background: var(--color-black);
   border-top: 1px solid var(--color-border);
 }
@@ -326,7 +327,7 @@
 }
 .services-section {
   position: relative;
-  padding: 130px 0;
+  padding: 100px 0;
   background: var(--color-black);
   border-top: 1px solid var(--color-border);
 }
@@ -444,7 +445,7 @@
 }
 .projects-section {
   position: relative;
-  padding: 120px 0;
+  padding: 90px 0;
   background: #080808;
   border-top: 1px solid var(--color-border);
 }
@@ -920,6 +921,103 @@
   .service-card,
   .project-info {
     padding: 24px 20px;
+  }
+}
+
+
+/* ================================
+   MARQUEE DE TECNOLOGÍAS
+   ================================ */
+
+.tech-marquee {
+  position: relative;
+  padding: 42px 0 46px;
+  background: var(--color-black);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.tech-marquee-label {
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--color-gray-dark);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tech-marquee-inner {
+  width: min(calc(100% - 48px), 540px);
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+
+.tech-track {
+  display: flex;
+  width: max-content;
+  animation: tech-scroll 26s linear infinite;
+}
+
+.tech-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0 5px;
+  list-style: none;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  padding: 6px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-gray);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.tech-chip svg {
+  width: 13px;
+  height: 13px;
+  flex: none;
+}
+
+@keyframes tech-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-marquee-inner {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .tech-marquee-inner {
+    width: min(calc(100% - 48px), var(--container));
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .tech-list[aria-hidden='true'] {
+    display: none;
   }
 }
 
