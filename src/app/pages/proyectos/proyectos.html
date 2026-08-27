@@ -57,7 +57,7 @@
 
             <div class="projects-grid">
 
-                @for (proyecto of proyectos; track proyecto.numero) {
+                @for (proyecto of proyectosPagina(); track proyecto.numero) {
 
                 <article class="project-card reveal">
 
@@ -127,6 +127,47 @@
                 }
 
             </div>
+
+            @if (totalPaginas() > 1) {
+
+            <nav class="projects-pager" aria-label="Paginación de proyectos">
+
+                <button
+                    type="button"
+                    class="projects-pager-arrow"
+                    (click)="irAPagina(paginaActual() - 1)"
+                    [disabled]="paginaActual() === 1"
+                    aria-label="Página anterior"
+                >
+                    ←
+                </button>
+
+                @for (n of paginas(); track n) {
+                <button
+                    type="button"
+                    class="projects-pager-num"
+                    [class.is-active]="paginaActual() === n"
+                    [attr.aria-current]="paginaActual() === n ? 'page' : null"
+                    [attr.aria-label]="'Ir a la página ' + n"
+                    (click)="irAPagina(n)"
+                >
+                    {{ n }}
+                </button>
+                }
+
+                <button
+                    type="button"
+                    class="projects-pager-arrow"
+                    (click)="irAPagina(paginaActual() + 1)"
+                    [disabled]="paginaActual() === totalPaginas()"
+                    aria-label="Página siguiente"
+                >
+                    →
+                </button>
+
+            </nav>
+
+            }
 
         </section>
 

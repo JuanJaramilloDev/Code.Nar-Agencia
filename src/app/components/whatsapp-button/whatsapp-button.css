@@ -1,3 +1,8 @@
+/* ================================
+   BOTONES FLOTANTES DE REDES
+   Todos iguales: cuadrado, gris oscuro, icono blanco.
+   ================================ */
+
 .social-floating {
   position: fixed;
   right: 24px;
@@ -9,76 +14,48 @@
   gap: 12px;
 }
 
-/* ================================
-   ICONOS SECUNDARIOS (INSTAGRAM / TIKTOK)
-   ================================ */
-
-.social-icon-button {
+.social-icon-button,
+.whatsapp-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--color-gold);
+  border-radius: 6px;
+  background: #242424;
   color: #fff;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
-  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  transition: transform var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition);
 }
 
-.social-icon-button svg {
+.social-icon-button svg,
+.whatsapp-button svg {
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
 
-.social-icon-button:hover {
-  filter: brightness(1.12) saturate(1.15);
-  transform: translateY(-3px);
+.social-icon-button:hover,
+.whatsapp-button:hover {
+  background: #2e2e2e;
+  border-color: var(--color-gold-light);
+  transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
 }
 
-/* Colores propios de cada red: fondo de marca, ícono en blanco encima. */
-
-.social-icon-button--instagram {
-  background: linear-gradient(135deg, #feda75 0%, #fa7e1e 22%, #d62976 55%, #962fbf 78%, #4f5bd5 100%);
+/* El texto accesible del botón de WhatsApp no se muestra. */
+.whatsapp-button span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.social-icon-button--tiktok {
-  background: linear-gradient(135deg, #25f4ee 0%, #0a0a0a 48%, #fe2c55 100%);
-}
-
-/* ================================
-   WHATSAPP (PRINCIPAL)
-   ================================ */
-
-.whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 18px 0 14px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: 999px;
-  background: #25d366;
-  color: #07140b;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, .32);
-  font-size: 12px;
-  font-weight: 700;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-}
-
-.whatsapp-button svg {
-  width: 27px;
-  height: 27px;
-  fill: currentColor;
-}
-
-.whatsapp-button:hover {
-  background: #42df7b;
-  box-shadow: 0 18px 42px rgba(37, 211, 102, .26);
-  transform: translateY(-4px);
-}
 
 /* ================================
    MÓVIL — que no tapen la pantalla
@@ -91,38 +68,19 @@
     gap: 10px;
   }
 
-  .social-icon-button {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-icon-button svg {
-    width: 17px;
-    height: 17px;
-  }
-
+  .social-icon-button,
   .whatsapp-button {
-    width: 48px;
-    height: 48px;
-    min-height: 48px;
-    padding: 0;
-    justify-content: center;
+    width: 42px;
+    height: 42px;
   }
 
+  .social-icon-button svg,
   .whatsapp-button svg {
-    width: 23px;
-    height: 23px;
-  }
-
-  .whatsapp-button span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
+    width: 18px;
+    height: 18px;
   }
 }
+
 
 /* ================================
    ACCESIBILIDAD

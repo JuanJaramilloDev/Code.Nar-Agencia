@@ -1,106 +1,81 @@
 <section class="hero">
 
-    <div class="hero-container">
-        <div class="hero-content">
+    <span class="hero-ghost" data-parallax="10" aria-hidden="true">Nariño</span>
 
-            <div class="eyebrow hero-reveal">
-                <span class="eyebrow-dot"></span>
-                DESARROLLO DIGITAL · COLOMBIA
-            </div>
+    <div class="hero-inner">
 
-            <h1 class="hero-reveal">
-                Automatizamos, desarrollamos
-                <span> y potenciamos.</span> tu negocio.
-            </h1>
+        <p class="label hero-reveal">
+            <span class="label-mark">//</span>
+            agencia de software · pasto, colombia
+        </p>
 
-            <p class="hero-description hero-reveal">
-                Somos Code.Nar: Creamos webs, diseñamos software a medida y ofrecemos hosting para que tu 
-                negocio crezca en el mundo digital. Resultados reales para empresas
-            </p>
+        <h1 class="hero-reveal">
+            Automatizamos, desarrollamos
+            <em>y potenciamos</em>
+            tu negocio.
+        </h1>
 
-            <div class="hero-actions hero-reveal">
-                <a routerLink="/contacto" class="btn btn-primary">
-                    Impulsa tu negocio
-                    <span>↗</span>
-                </a>
+        <p class="hero-copy hero-reveal">
+            Somos Code.Nar: creamos webs, diseñamos software a medida y
+            ofrecemos hosting para que tu negocio crezca en el mundo
+            digital. Resultados reales para empresas.
+        </p>
 
-                <a href="#servicios" class="btn btn-secondary">
-                    Ver servicios
-                    <span>→</span>
-                </a>
-            </div>
+        <div class="hero-cta hero-reveal">
+            <a routerLink="/contacto" class="btn btn-primary">
+                Impulsa tu negocio
+                <span>↗</span>
+            </a>
 
-            <div class="hero-stats hero-reveal" aria-label="Características de Code.Nar">
-
-                <div class="stat">
-                    <strong>Equipo</strong>
-                    <span>Multidisciplinario</span>
-                </div>
-
-                <div class="stat">
-                    <strong>6</strong>
-                    <span>Servicios digitales</span>
-                </div>
-
-                <div class="stat">
-                    <strong>100%</strong>
-                    <span>A la medida</span>
-                </div>
-
-            </div>
+            <a href="/servicios" class="btn btn-secondary">
+                Ver servicios
+                <span>→</span>
+            </a>
         </div>
 
-        <div class="hero-visual hero-reveal">
+        <dl class="hero-stats hero-reveal" aria-label="Características de Code.Nar">
 
-            <div class="visual-glow"></div>
-
-            <div class="visual-card">
-
-                <div class="visual-card-top">
-                    <span>NARICODE</span>
-                    <span>20 / 08</span>
-                </div>
-
-                <div class="visual-content">
-
-                    <span class="visual-label">
-                        EXPERIENCIA DIGITAL
-                    </span>
-
-                    <h2>
-                        Crear.
-                        <br />
-                        Escalar.
-                        <br />
-                        <em>Crecer.</em>
-                    </h2>
-
-                    <div class="visual-line"></div>
-
-                </div>
-
-                <div class="visual-card-bottom">
-                    <span>DESARROLLO WEB</span>
-                    <span>2026</span>
-                </div>
-
+            <div class="hero-stat">
+                <dt>Equipo</dt>
+                <dd>Multidisciplinario</dd>
             </div>
 
-            <div class="floating-card">
-                <span class="floating-icon"><app-icon name="sparkles" [size]="16" /></span>
-
-                <div>
-                    <strong>Soluciones</strong>
-                    <small>Digitales</small>
-                </div>
+            <div class="hero-stat">
+                <dt>6</dt>
+                <dd>Servicios digitales</dd>
             </div>
 
-        </div>
+            <div class="hero-stat">
+                <dt>100%</dt>
+                <dd>A la medida</dd>
+            </div>
+
+        </dl>
+
     </div>
 
-    <div class="scroll-indicator">
-        <span></span>
-        DESPLÁZATE PARA EXPLORAR
+    <div class="hero-gallery-wrap hero-reveal">
+        <div class="hero-gallery">
+
+            <figure class="hg-item hg-side hg-left">
+                <img src="/images/quemini.webp"
+                    alt="Proyecto Quemini desarrollado por Code.Nar" loading="lazy"
+                    (error)="$any($event.target).closest('.hg-item').style.display = 'none'" />
+            </figure>
+
+            <figure class="hg-item hg-side hg-right">
+                <img src="/images/reyinmobiliaria.webp"
+                    alt="Plataforma web Rey Inmobiliaria desarrollada por Code.Nar" loading="lazy"
+                    (error)="$any($event.target).closest('.hg-item').style.display = 'none'" />
+            </figure>
+
+            <figure class="hg-item hg-main">
+                <img src="/images/av21bar.webp"
+                    alt="Sistema de gestión AV21BAR desarrollado por Code.Nar" loading="eager"
+                    (error)="$any($event.target).closest('.hg-item').style.display = 'none'" />
+            </figure>
+
+        </div>
     </div>
 
 </section>
@@ -563,7 +538,7 @@
 
                 <div class="project-image">
 
-                    <img src="/images/reyinmobiliaria.png"
+                    <img src="/images/reyinmobiliaria.webp"
                         alt="Captura de la plataforma web de Rey Inmobiliaria"
                         loading="lazy"
                         (error)="$any($event.target).style.display = 'none'" />
@@ -610,7 +585,7 @@
 
                 <div class="project-image">
 
-                    <img src="/images/av21bar.png"
+                    <img src="/images/av21bar.webp"
                         alt="Captura del sistema de gestión de AV21BAR"
                         loading="lazy"
                         (error)="$any($event.target).style.display = 'none'" />

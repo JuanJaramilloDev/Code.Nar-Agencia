@@ -32,7 +32,7 @@ export class Home {
     });
 
     afterNextRender(() =>
-      initScrollAnimations(this.host, this.destroyRef, '.hero', '.visual-glow'),
+      initScrollAnimations(this.host, this.destroyRef, '.hero'),
     );
   }
 }

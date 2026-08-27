@@ -273,6 +273,62 @@
 }
 
 /* =========================================
+   PAGINADOR
+   ========================================= */
+
+.projects-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 55px;
+}
+
+.projects-pager-num,
+.projects-pager-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.015);
+    color: var(--color-gray);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition),
+        color var(--transition);
+}
+
+.projects-pager-num:hover,
+.projects-pager-arrow:not(:disabled):hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    color: var(--color-white);
+}
+
+.projects-pager-num.is-active {
+    border-color: var(--color-gold);
+    background: var(--color-gold);
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.projects-pager-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.projects-pager-num:focus-visible,
+.projects-pager-arrow:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
    CTA
    ========================================= */
 
@@ -399,6 +455,16 @@
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 14px;
+    }
+
+    .projects-pager {
+        margin-top: 38px;
+    }
+
+    .projects-pager-num,
+    .projects-pager-arrow {
+        width: 38px;
+        height: 38px;
     }
 
     .project-image {
